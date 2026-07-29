@@ -6,27 +6,25 @@ chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
-# 7. Cân bằng tải ALB, CloudFront & Tự động hóa CI/CD (Hạn chót 31/07)
+# 7. Triển khai Frontend S3/CloudFront & Nghiệm thu Hệ thống (Hạn chót 31/07)
 
 ### Mục tiêu trong tuần:
 
-* Thiết lập Application Load Balancer và chứng chỉ ACM SSL cho Backend.
-* Triển khai Frontend lên S3 website hosting, bảo mật HTTPS qua CloudFront CDN tên miền riêng.
-* Lập trình quy trình CI/CD tự động qua GitHub Actions và nghiệm thu toàn hệ thống.
+* Triển khai hoàn tất giao diện React Frontend lên S3 Website Hosting và bảo mật HTTPS qua CloudFront CDN.
+* Ánh xạ tên miền riêng và phối hợp kiểm thử tự động hóa quy trình CI/CD từ GitHub Actions.
 
 ### Các đầu việc đã thực hiện trong tuần:
 
 | Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
 | --- | --- | --- | --- |
-| 1 | Đăng ký chứng chỉ ACM SSL và thiết lập bộ cân bằng tải ALB cổng 443. | 27/07/2026 | 27/07/2026 |
-| 2 | Cấu hình CloudFront CDN phân phối S3 và trỏ các bản ghi CNAME trên Tenten.vn. | 28/07/2026 | 28/07/2026 |
-| 3 | Lập trình file deploy.yml, cấu hình Secrets và kiểm thử tự động hóa CI/CD. | 29/07/2026 | 29/07/2026 |
-| 4 | Sửa lỗi tham số Bedrock và lập trình cơ chế AI tự động đổi nhà cung cấp dự phòng. | 30/07/2026 | 30/07/2026 |
-| 5 | Cấu hình rate limits, gắn Custom IAM Policy tối thiểu quyền và nộp bài báo cáo. | 31/07/2026 | 31/07/2026 |
+| 1 | Thực hiện build bản chính thức Frontend và đồng bộ hóa các tệp tin lên S3 Frontend Bucket. | 27/07/2026 | 27/07/2026 |
+| 2 | Thiết lập CloudFront CDN, cấu hình Custom Error Pages (định tuyến lỗi 404 về `/index.html`) hỗ trợ React Router. | 28/07/2026 | 28/07/2026 |
+| 3 | Trỏ tên miền phụ CNAME `www` trên Tenten.vn về tên miền phân phối của CloudFront. | 29/07/2026 | 29/07/2026 |
+| 4 | Phối hợp với Nguyễn Hồng Sơn cấu hình GitHub Secrets và chạy thử nghiệm quy trình tự động deploy Frontend/Backend. | 30/07/2026 | 30/07/2026 |
+| 5 | Kiểm thử bảo mật toàn diện trên cổng HTTPS thực tế, hoàn thiện tài liệu báo cáo thực tập. | 31/07/2026 | 31/07/2026 |
 
 ### Các kết quả đạt được:
 
-* Hoàn thành mã hóa HTTPS toàn phần cho tên miền Frontend và API Backend.
-* Lập trình và kiểm thử cơ chế tự động chuyển vùng dự phòng AI (Groq ⇄ Bedrock) an toàn.
-* Thiết lập thành công quy trình CI/CD tự động qua GitHub Actions sử dụng Custom IAM Policy.
-* Nghiệm thu toàn diện hệ thống LearnSphere và hoàn thiện báo cáo đúng thời hạn chót 31/07.
+* Giao diện tĩnh Frontend được triển khai thành công tại tên miền riêng bảo mật: **`https://www.learnsphere.id.vn`**.
+* Quy trình CI/CD tích hợp mượt mà (tự động đồng bộ file tĩnh lên S3 và xóa cache CloudFront `/*` khi có code mới).
+* Nghiệm thu toàn diện hệ thống LearnSphere và nộp báo cáo đúng hạn chót 31/07.

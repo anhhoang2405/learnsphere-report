@@ -6,24 +6,24 @@ chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-# 2. Kiến trúc Backend & Thiết lập Database
+# 2. Khởi tạo Giao diện Frontend & Thiết kế Schema
 
 ### Mục tiêu trong tuần:
 
-* Khởi tạo khung mã nguồn Node.js/Express Backend cho LearnSphere.
-* Thiết lập kết nối cơ sở dữ liệu MongoDB Atlas và thiết kế các bảng dữ liệu.
+* Khởi tạo khung mã nguồn React/Vite Frontend cho LearnSphere.
+* Thiết kế phác thảo (wireframe) giao diện và phối hợp thiết kế cơ sở dữ liệu.
 
 ### Các đầu việc đã thực hiện trong tuần:
 
 | Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
 | --- | --- | --- | --- |
-| 1 | Thiết kế Mongoose schemas cho người dùng, khóa học và học tập. | 22/06/2026 | 22/06/2026 |
-| 2 | Xây dựng cấu trúc định tuyến định dạng API Express. | 23/06/2026 | 23/06/2026 |
-| 3 | Kết nối dữ liệu tới MongoDB Atlas cloud. | 24/06/2026 | 24/06/2026 |
-| 4 | Lập trình APIs đăng ký, đăng nhập tích hợp JWT bảo mật. | 25/06/2026 | 25/06/2026 |
-| 5 | Kiểm thử các cổng API local bằng Postman. | 26/06/2026 | 26/06/2026 |
+| 1 | Khởi tạo dự án React/Vite, cài đặt Tailwind CSS và cấu hình thư mục. | 22/06/2026 | 22/06/2026 |
+| 2 | Phối hợp với Nguyễn Hồng Sơn thiết kế Mongoose database schemas để tương thích giao diện. | 23/06/2026 | 23/06/2026 |
+| 3 | Thiết kế wireframe cho màn hình đăng nhập và trang tổng quan học viên. | 24/06/2026 | 24/06/2026 |
+| 4 | Cấu hình định tuyến (routing) cho client sử dụng React Router DOM. | 25/06/2026 | 25/06/2026 |
+| 5 | Lập trình các trang UI đăng ký/đăng nhập cơ bản, tích hợp lưu trữ Token JWT. | 26/06/2026 | 26/06/2026 |
 
 ### Các kết quả đạt được:
 
-* Cấu hình thành công Express routes, Mongoose schemas (User, Course, Lesson).
-* Hoàn thành hệ thống xác thực người dùng bằng mã khóa JWT bảo mật.
+* Cấu hình thành công dự án React/Vite Frontend và cấu trúc định tuyến (routing) phía client.
+* Thống nhất thiết kế Database Schema (gồm các models: User, Course, Lesson) phù hợp luồng dữ liệu của Frontend.
