@@ -7,25 +7,23 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Nguyễn Văn A
+&emsp; **Họ và tên:** Nguyễn Hoàng Anh
 
-&emsp; **Số điện thoại:** 0989888999
+&emsp; **Số điện thoại:** 0927575656
 
-&emsp; **Email:** Anguyenvan@gmail.com
+&emsp; **Email:** anh.nguyenhoang2405@hcmut.edu.vn
 
-&emsp; **Trường:** Đại học Sư phạm Kỹ thuật TP.HCM
+&emsp; **Trường:** Đại học Bách Khoa - TP. Hồ Chí Minh
 
-&emsp; **Ngành:** Công nghệ thông tin
+&emsp; **Ngành:** Khoa học máy tính
 
-&emsp; **Lớp:** AWS082025
+&emsp; **Lớp:** MT23KHM1
 
 &emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
 
-&emsp; **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
+&emsp; **Thời gian thực tập:** Từ ngày 15/06/2026 đến ngày 14/08/2026
 
-&emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
-
-![Ảnh đại diện của bạn](/images/avatar.png)
+![Ảnh đại diện của bạn](/images/avatar.jpg)
 
 
 
@@ -38,3 +36,11 @@ chapter: false
 5.  [Workshop](5-Workshop/)
 6.  [Tự đánh giá](6-Self-evaluation/)
 7.  [Chia sẻ, đóng góp ý kiến](7-Feedback/)
+
+---
+
+### Tài liệu Tham khảo & Demo Links
+*   **GitHub Repository**: [LearnSphere Repo](https://github.com/HoiaeKHMT/LearnSphere)
+*   **Video Demo**: [▶️ Nhấp vào đây để xem Video Demo giới thiệu đồ án LearnSphere](https://youtu.be/tDmx26ALz5s)
+*   **Tên miền trang Web**: [https://www.learnsphere.id.vn](https://www.learnsphere.id.vn)
+*   **Cổng API Backend**: [https://api.learnsphere.id.vn/api/](https://api.learnsphere.id.vn/api/)

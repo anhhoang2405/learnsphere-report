@@ -8,30 +8,25 @@ chapter: false
     
 # Internship Report
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 ### Student Information:
-&emsp; **Full Name:** Nguyen Van A
+&emsp; **Full Name:** Nguyen Hoang Anh
 
-&emsp; **Phone Number:** 0989888999 
+&emsp; **Phone Number:** 0927575656 
 
-&emsp; **Email:** Anguyenvan@gmail.com
+&emsp; **Email:** anh.nguyenhoang2405@hcmut.edu.vn
 
-&emsp; **University:** Ho Chi Minh City University of Technology and Education
+&emsp; **University:** Ho Chi Minh City University of Technology (HCMUT)
 
-&emsp; **Major:** Information Technology
+&emsp; **Major:** Computer Science
 
-&emsp; **Class:** AWS082025
+&emsp; **Class:** MT23KHM1
 
 &emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
 
-&emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
+&emsp; **Internship Duration:** From 15/06/2026 to 14/08/2026
 
-&emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
-
-![Your profile picture](/images/avatar.png)
+![Your profile picture](/images/avatar.jpg)
 
 ### Report Content
 
@@ -42,3 +37,12 @@ chapter: false
 5.  [Workshop](5-Workshop/)
 6.  [Self-evaluation](6-Self-evaluation/)
 7.  [Sharing and Feedback](7-Feedback/)
+
+---
+
+### References & Demo Links
+*   **GitHub Repository**: [LearnSphere Repo](https://github.com/HoiaeKHMT/LearnSphere)
+*   **Demo Video**: [▶️ Click here to watch the LearnSphere Project Demo Video](https://youtu.be/tDmx26ALz5s)
+*   **Production URL**: [https://www.learnsphere.id.vn](https://www.learnsphere.id.vn)
+*   **API Endpoint**: [https://api.learnsphere.id.vn/api/](https://api.learnsphere.id.vn/api/)
+

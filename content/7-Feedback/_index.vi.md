@@ -5,9 +5,6 @@ weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 >Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
 
@@ -33,12 +30,14 @@ Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về t
 
 
 ### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
-
+* Điều bạn **hài lòng nhất** trong thời gian thực tập?  
+  * &emsp; **Trả lời:** Điều tôi hài lòng nhất là tự tay xây dựng thành công hạ tầng hoàn chỉnh chạy thực tế trên AWS cho dự án LearnSphere. Việc áp dụng các công nghệ như Docker, S3, CloudFront, ALB và tự động hóa qua GitHub Actions giúp tôi hiểu sâu hơn về kiến thức vận hành hệ thống.
+* Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
+  * &emsp; **Trả lời:** Cung cấp thêm hạn mức chi phí AWS (AWS credits) để thực tập sinh có thể thử nghiệm các mô hình kiến trúc lớn hơn hoặc trải nghiệm các dịch vụ container nâng cao như Amazon ECS.
+* Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
+  * &emsp; **Trả lời:** Có, chắc chắn rồi. Chương trình First Cloud AI Journey có lộ trình đào tạo bài bản, tài liệu thực hành cực kỳ sát thực tế và các anh chị mentor luôn tận tình chỉ bảo.
 
 ### Đề xuất & mong muốn
-- Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+* **Đề xuất cải thiện:** Tổ chức thêm các buổi giao lưu, trao đổi code (hackathon nội bộ) giữa các nhóm dự án khác nhau để tăng tính kết nối.
+* **Mong muốn tương lai:** Tôi hy vọng có thể tiếp tục tham gia và đóng góp cho cộng đồng AWS Study Group, đồng thời hỗ trợ định hướng cho các bạn thực tập sinh khóa sau.
+* **Góp ý khác:** Xin gửi lời cảm ơn chân thành đến các mentor và coordinators của chương trình FCAJ đã luôn hỗ trợ và tạo môi trường học tập tuyệt vời cho tôi trong suốt kỳ thực tập.

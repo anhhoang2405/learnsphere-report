@@ -1,125 +1,63 @@
 ---
-title: "Event 2"
-date: 2024-01-01
-weight: 1
+title: "Sự kiện 2"
+date: 2026-07-25
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Bài thu hoạch: Tham dự Demo Day - ASEAN Agentic AI Buildathon (AABW)
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### 1. Thông tin chung về sự kiện
+*   **Tên sự kiện:** ASEAN Agentic AI Buildathon (AABW) - Demo Day & Project Showcase
+*   **Thời gian diễn ra:** 09:00 - 17:00 ngày 25/07/2026
+*   **Địa điểm:** Hội trường AWS Việt Nam, TP. Hồ Chí Minh
+*   **Vai trò tham gia:** Người tham dự học hỏi (Attendee/Audience)
 
-### Mục Đích Của Sự Kiện
+---
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### 2. Mục tiêu tham gia sự kiện
+*   Tìm hiểu xu hướng phát triển và ứng dụng của Agentic AI (Trí tuệ nhân tạo dạng tác nhân) trong thực tế thông qua các sản phẩm công nghệ của các đội thi.
+*   Nghiên cứu kiến trúc giải pháp Cloud của các dự án lớn, cách kết hợp dịch vụ AWS (Bedrock, SageMaker, Lambda) với các mô hình AI tiên tiến.
+*   Thu thập kiến thức thực tế về quy trình phát triển sản phẩm công nghệ dưới áp lực thời gian (Hackathon 24 giờ) và cách trình bày sản phẩm (Pitching) trước hội đồng ban giám khảo AWS.
 
-### Danh Sách Diễn Giả
+---
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+### 3. Phân tích các dự án tiêu biểu tại sự kiện
+Trong buổi Demo Day, tôi đã có cơ hội lắng nghe và phân tích kiến trúc hạ tầng của các dự án xuất sắc:
 
-### Nội Dung Nổi Bật
+#### A. Dự án S.H.E.P.H.E.R.D (Nhóm 3KA)
+*   **Mục tiêu:** Hệ thống thông minh giám sát mật độ đám đông, xếp hàng và dự báo tắc nghẽn thời gian thực tại các sự kiện.
+*   **Kiến trúc kỹ thuật:** 
+    *   Sử dụng **YOLO + ByteTrack** để phát hiện và theo dõi chuyển động người qua camera.
+    *   Hạ tầng AI chạy trên máy chủ **Amazon SageMaker Endpoint** để xử lý suy luận hình ảnh.
+    *   Kết hợp **Amazon Bedrock AgentCore + Strands Agent** để ra quyết định và gửi cảnh báo tự động về bảng điều khiển React.
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### B. Dự án Signal Scout (Nhóm Signal Scout)
+*   **Mục tiêu:** AI Agent tự động thu thập và phân tích các tín hiệu thay đổi chiến lược của doanh nghiệp để đưa ra cảnh báo rủi ro sớm.
+*   **Kiến trúc kỹ thuật:** 
+    *   Sử dụng **Apify & TinyFish** để tự động cào (crawl) thông tin từ internet.
+    *   Luồng xử lý tự động hóa thông qua **API Gateway -> AWS Lambda** để điều phối và ghi nhận dữ liệu vào **DynamoDB**.
+    *   Tích hợp **AgentCore Runtime** kết hợp với **Amazon Bedrock** và **Bedrock Guardrails** để phân tích dữ liệu chuyên sâu và bảo mật thông tin đầu ra.
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### C. Dự án KFC Bot Agent (Nhóm One Team)
+*   **Mục tiêu:** Trợ lý AI hội thoại đặt món ăn đa kênh tự động (Zalo OA, Messenger, WhatsApp) không cần tải ứng dụng hay đăng ký tài khoản rườm rà.
+*   **Kiến trúc kỹ thuật:** 
+    *   Tin nhắn người dùng qua Zalo được tiếp nhận qua **WAF & API Gateway**, đưa vào hàng đợi **Amazon SQS** để điều phối tải.
+    *   Xử lý logic và ra quyết định bằng **Bedrock Agentcore** kết hợp với **OpenSearch Service** để tìm kiếm món ăn nhanh chóng.
+    *   Giúp cắt giảm **60% lượng code hạ tầng** nhờ tận dụng tối đa kiến trúc AgentCore của AWS.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+---
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+### 4. Bài học và Giá trị tích lũy
+*   **Hiểu biết sâu sắc về Agentic AI:** Hiểu rõ sự khác biệt giữa Chatbot thông thường (chỉ trả lời câu hỏi) và AI Agent thực thụ (có khả năng lập kế hoạch, gọi công cụ - Tool Call, tự động đưa ra hành động và quản lý bộ nhớ dài/ngắn hạn).
+*   **Kinh nghiệm thiết kế Serverless:** Học tập cách các nhóm thiết kế hệ thống tối ưu hóa chi phí (ví dụ như bài toán tối ưu chi phí hạ tầng Bedrock và Lambda của nhóm Signal Scout giảm giá chạy từ $130 xuống còn $35/tháng).
+*   **Động lực phát triển bản thân:** Thấy được cách các nhóm vượt qua các thử thách khó khăn như thiếu hụt thời gian ngủ, lỗi code vào 3 giờ sáng để tạo nên các ứng dụng MVP hoàn chỉnh. Điều này tạo động lực to lớn cho việc hoàn thiện đồ án LearnSphere của tôi.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+---
 
-#### Domain-Driven Design (DDD)
+### 5. Hình ảnh minh chứng tham gia sự kiện
+Dưới đây là hình ảnh ghi nhận không khí buổi chia sẻ và trình diễn công nghệ cực kỳ sôi động tại Demo Day:
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
-
-#### Event-Driven Architecture
-
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
-
-### Những Gì Học Được
-
-#### Tư Duy Thiết Kế
-
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
-
-#### Kiến Trúc Kỹ Thuật
-
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+![Minh chứng tham gia AABW Demo Day 1](/images/4-EventParticipated/event2a.jpg)
+![Minh chứng tham gia AABW Demo Day 2](/images/4-EventParticipated/event2b.jpg)

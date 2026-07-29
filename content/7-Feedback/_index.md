@@ -6,9 +6,6 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 > Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
 
@@ -35,13 +32,16 @@ The company provides an internship allowance and offers flexible working hours w
 ---
 
 ### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+* What did you find **most satisfying** during your internship?  
+  * &emsp; **Answer:** The most satisfying part was successfully building a production-grade infrastructure on AWS for the LearnSphere project. Getting hands-on experience with S3 website hosting, CloudFront distributions, Application Load Balancers, Bedrock Converse APIs, and automating deployments with GitHub Actions was incredibly rewarding.
+* What do you think the company **should improve** for future interns?  
+  * &emsp; **Answer:** Provide additional AWS budget/credits for interns to explore multi-region deployments or experiment with container orchestration services like Amazon ECS.
+* If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+  * &emsp; **Answer:** Yes, absolutely. The First Cloud AI Journey program offers a well-structured curriculum, highly supportive mentors, and practical projects that directly translate to industry needs.
 
 ---
 
 ### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+* **Suggestions to improve:** Organize more team bonding activities and collaborative coding sessions between different project teams.
+* **Future interest:** I would love to continue participating in the AWS Study Group community and help guide future cohorts of interns.
+* **Additional comments:** Special thanks to the FCAJ mentors and coordinators for their dedicated support and for creating an amazing learning ecosystem.

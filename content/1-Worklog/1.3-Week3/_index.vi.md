@@ -1,59 +1,30 @@
 ---
-title: "Worklog Tuần 3"
-date: 2024-01-01
-weight: 1
+title: "Week 3 Worklog"
+date: 2026-07-25
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+# 3. Tích hợp lưu trữ Amazon S3
 
-### Mục tiêu tuần 3:
+### Mục tiêu trong tuần:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Cấu hình AWS SDK S3 trong Backend LearnSphere để quản lý tài liệu học tập.
+* Xây dựng tính năng tải lên an toàn bằng đường dẫn S3 Presigned URL.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các đầu việc đã thực hiện trong tuần:
 
+| Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
+| --- | --- | --- | --- |
+| 1 | Tìm hiểu kiến trúc lưu trữ S3: Presigned URL và tải lên trực tiếp. | 29/06/2026 | 29/06/2026 |
+| 2 | Viết helper xử lý file trong file.service.js. | 30/06/2026 | 30/06/2026 |
+| 3 | Viết logic tạo chữ ký GET/PUT của S3 thông qua AWS SDK v3. | 01/07/2026 | 01/07/2026 |
+| 4 | Thêm các điều kiện ràng buộc định dạng file tải lên. | 02/07/2026 | 02/07/2026 |
+| 5 | Kiểm thử chu trình upload-download từ S3 cục bộ. | 03/07/2026 | 03/07/2026 |
 
-### Kết quả đạt được tuần 3:
+### Các kết quả đạt được:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Tích hợp thành công AWS SDK v3 S3 client.
+* Hoàn thành các APIs tạo đường dẫn tải lên (`PresignedUpload`) và tải xuống (`PresignedDownload`).
+* Tăng cường bảo mật S3 bằng cách chỉ sinh chữ ký có thời hạn ngắn (Presigned URL) cho học sinh.

@@ -1,39 +1,23 @@
 ---
 title: "Worklog"
-date: 2024-01-01
+date: 2026-07-25
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+# Internship Worklog Summary
 
-**On this page**, you will need to introduce your worklog. **How** did you complete it? How many weeks did you take to complete the program? **What** did you do in those weeks?
+This section records the weekly logs of **Nguyen Hoang Anh**'s internship under the **First Cloud AI Journey (FCAJ)** program.
 
-Typically, and as a standard, a worklog is carried out over about 3 months (throughout the internship period) with weekly contents as follows:
+The official internship covers a duration from **15/06/2026 to 14/08/2026**, with the intensive project development phase of **LearnSphere** spanning 7 weeks (completed on **31/07/2026**). This log documents the learning of AWS services, codebase development, Docker containerization, secure EC2 deployments, S3/CloudFront hosting, and CI/CD automation.
 
-**Week 1:** [Getting familiar with AWS and basic AWS services](1.1-week1/)
+#### Weekly Progression Summary
 
-**Week 2:** [Doing task A...](1.2-week2/)
-
-**Week 3:** [Doing task B...](1.3-week3/)
-
-**Week 4:** [Doing task C...](1.4-week4/)
-
-**Week 5:** [Doing task D...](1.5-week5/)
-
-**Week 6:** [Doing task E...](1.6-week6/)
-
-**Week 7:** [Doing task G...](1.7-week7/)
-
-**Week 8:** [Doing task H...](1.8-week8/)
-
-**Week 9:** [Doing task I...](1.9-week9/)
-
-**Week 10:** [Doing task L...](1.10-week10/)
-
-**Week 11:** [Doing task M...](1.11-week11/)
-
-**Week 12:** [Doing task N...](1.12-week12/)
+1. **[Week 1: Introduction & AWS Foundations](1.1-week1/)** - Onboarded, studied basic cloud architecture, and configured local AWS CLI profiles.
+2. **[Week 2: Backend Architecture & Database Setup](1.2-week2/)** - Developed Express API routes and integrated MongoDB Atlas cloud database.
+3. **[Week 3: Amazon S3 Storage Integration](1.3-week3/)** - Integrated AWS SDK v3 S3 client and implemented secure file uploading via Presigned URLs.
+4. **[Week 4: Frontend UI/UX Implementation](1.4-week4/)** - Initialized Vite React project and built tutor dashboard and upload flow interfaces.
+5. **[Week 5: AI Core Service Integration & Local Testing](1.5-week5/)** - Wrote AI provider wrappers supporting Groq (Llama-3) and AWS Bedrock Converse APIs, resolved CORS blockers, and verified quiz generation locally.
+6. **[Week 6: Docker Containerization & Server Setup](1.6-week6/)** - Packaged backend using an optimized multi-stage Dockerfile, created ECR repository, launched Amazon Linux 2023 EC2, and configured IAM Instance Profile role.
+7. **[Week 7: HTTPS ALB, CloudFront & CI/CD Deployment (Deadline 31/07)](1.7-week7/)** - Configured Application Load Balancer listeners (HTTPS 443), CloudFront static web distribution, custom SSL certificates, CNAME record routing on Tenten, and set up the automated deploy pipeline via GitHub Actions.
