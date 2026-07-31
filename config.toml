@@ -1,5 +1,5 @@
 baseURL = "https://anhhoang2405.github.io/learnsphere-report/"
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = false
 defaultContentLanguage = "en"
 
