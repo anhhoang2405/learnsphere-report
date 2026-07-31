@@ -1,4 +1,4 @@
-baseURL = "https://anhhoang2405.github.io/learnsphere-report/"
+baseURL = "https://workshop-sample.awsfcaj.com/"
 relativeURLs = true
 canonifyURLs = false
 defaultContentLanguage = "en"
