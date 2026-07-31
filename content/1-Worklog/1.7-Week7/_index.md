@@ -1,30 +1,31 @@
 ---
 title: "Week 7 Worklog"
-date: 2026-07-25
+date: 2026-07-13
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
-# 7. HTTPS ALB, CloudFront CDN & CI/CD Automation
+# 7. ALB Load Balancing, CloudFront HTTPS & DNS Domain Setup
 
-### Week Objectives:
+### Objectives of the week:
 
-* Configure CloudFront CDN for Frontend and set up Application Load Balancer (ALB) routing for EC2 Backend under secure HTTPS.
-* Establish automated CI/CD pipelines via GitHub Actions (OIDC) and run live production verification.
+* Register SSL/TLS certificates on ACM and enforce HTTPS protocols.
+* Set up Application Load Balancer (ALB) as a secure gateway for EC2 backend.
+* Host frontend assets on S3, distribute via CloudFront CDN, and link custom domain.
 
-### Tasks to be carried out this week:
+### Tasks performed during the week:
 
-| Day | Task | Start Date | Completion Date |
-| --- | --- | --- | --- |
-| 1 | Received the static Frontend build from Son, uploaded it to S3, and configured CloudFront CDN with OAC for secure S3 access. | 27/07/2026 | 27/07/2026 |
-| 2 | Registered SSL certificates on ACM for `learnspherev2.id.vn`, set up ALB listening on port 443, and forwarded traffic to EC2 port 5000. | 28/07/2026 | 28/07/2026 |
-| 3 | Configured CNAME records on Tenten: pointed `www` to CloudFront CDN, and `api` to ALB to completely resolve Mixed Content issues. | 29/07/2026 | 29/07/2026 |
-| 4 | Developed and finalized the GitHub Actions workflow file (`deploy.yml`), setting up OIDC for keyless secure AWS authentication. | 30/07/2026 | 30/07/2026 |
-| 5 | Ran the CI/CD pipeline automation tests (push to main triggers auto-deployment); conducted E2E testing with Son and Dung, and submitted the report. | 31/07/2026 | 31/07/2026 |
+| Day | Tasks performed | Start Date | End Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| **Monday** | - Request a free public SSL/TLS certificate via ACM for `learnspherev2.id.vn`. | 07/13/2026 | 07/13/2026 | https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html |
+| **Tuesday** | - Create an ALB in the public subnet, routing HTTPS requests on port 443 to the EC2 backend target group. | 07/14/2026 | 07/14/2026 | https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html |
+| **Wednesday** | - Receive frontend build from Son, synchronize to S3, and create a CloudFront CDN distribution. | 07/15/2026 | 07/16/2026 | https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html |
+| **Thursday** | - Configure CNAME records in Tenten DNS panel pointing `www` to CloudFront and `api` to ALB. | 07/16/2026 | 07/17/2026 | https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html |
+| **Friday** | - Fix Mixed Content issues by redirecting all frontend API endpoints to `api.learnspherev2.id.vn` subdomain. | 07/17/2026 | 07/17/2026 | https://aws.amazon.com/security/ |
 
-### Week Achievements:
+### Key achievements of week 7:
 
-* Successfully deployed the LearnSphere system live with full end-to-end HTTPS encryption under the domain `https://www.learnspherev2.id.vn`.
-* Established automated deployment pipelines for Backend on EC2 and Frontend on S3, completing builds in under 3 minutes.
-* Concluded the internship and submitted the final sign-off report before the July 31st deadline.
+* Successfully enforced HTTPS security protocols across the entire LearnSphere platform.
+* Configured secure traffic routing from ALB in public subnets to EC2 instances in private subnets.
+* Completed custom domain bindings, ensuring correct visual rendering and error-free API calls.

@@ -1,29 +1,30 @@
 ---
 title: "Week 2 Worklog"
-date: 2026-07-25
+date: 2026-06-08
 weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-# 2. Collaborative Backend Setup & Database Schema Design
+# 2. IAM Identity Management & Custom VPC Configuration
 
-### Week Objectives:
+### Objectives of the week:
 
-* Determine the architectural pattern and collaborate on MongoDB Atlas database design.
-* Initialize the Express.js Backend server to serve as the API foundation.
+* Study authorization and access control using AWS Identity and Access Management (IAM).
+* Design and configure a custom VPC network for the LearnSphere application.
+* Establish firewall rules (Security Groups, NACLs) to secure cloud resources.
 
-### Tasks to be carried out this week:
+### Tasks performed during the week:
 
-| Day | Task | Start Date | Completion Date |
-| --- | --- | --- | --- |
-| 1 | Met with the team to map application workflows; initialized the Express.js Backend repository structure. | 22/06/2026 | 22/06/2026 |
-| 2 | Collaborated with Dung (main backend developer) on designing the Mongoose schemas (User, Course, Lesson, Quiz models). | 23/06/2026 | 23/06/2026 |
-| 3 | Aligned with Son (frontend developer) on input/output API JSON payloads to ensure seamless FE-BE integration. | 24/06/2026 | 24/06/2026 |
-| 4 | Configured Express routing and basic middlewares (CORS, body-parser, morgan). | 25/06/2026 | 25/06/2026 |
-| 5 | Provisioned the MongoDB Atlas cluster on AWS, configured network IP whitelisting and secure database credentials. | 26/06/2026 | 26/06/2026 |
+| Day | Tasks performed | Start Date | End Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| **Monday** | - Study IAM mechanisms (User, Group, Role, Policy) and practice assigning permissions using the principle of least privilege. | 06/08/2026 | 06/08/2026 | https://000002.awsstudygroup.com/ |
+| **Tuesday** | - Use the AWS Pricing Calculator to estimate monthly running costs for the planned LearnSphere infrastructure. | 06/09/2026 | 06/09/2026 | https://000007.awsstudygroup.com/ |
+| **Thursday** | - Create a custom VPC containing Public Subnets and Private Subnets across different Availability Zones. | 06/11/2026 | 06/11/2026 | https://000003.awsstudygroup.com/ |
+| **Friday** | - Configure Internet Gateways, Route Tables, and Security Groups for EC2 to open necessary ports. | 06/12/2026 | 06/12/2026 | https://000004.awsstudygroup.com/<br>https://000057.awsstudygroup.com/ |
 
-### Week Achievements:
+### Key achievements of week 2:
 
-* Built a stable local Express server environment ready for core service development.
-* Finalized the Database Schema design, matching frontend UI needs and backend model constraints.
+* Mastered IAM security principles and enabled MFA to protect the root account.
+* Generated a complete cost estimation report for LearnSphere deployment on AWS.
+* Deployed a secure custom VPC network separating public and private application tiers.

@@ -1,29 +1,31 @@
 ---
 title: "Week 4 Worklog"
-date: 2026-07-25
+date: 2026-06-22
 weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-# 4. Core Backend APIs & JWT Auth Middleware
+# 4. Database Design & S3 Presigned URL API Integration
 
-### Week Objectives:
+### Objectives of the week:
 
-* Design and implement backend APIs for course management, lesson assets, and quizzes.
-* Set up secure token-based JWT authentication and role-based route authorization (Tutor/Student/Admin).
+* Design the MongoDB Atlas database schema for LearnSphere.
+* Develop backend APIs to support secure direct uploads to S3 from the browser.
+* Configure CORS policies to secure cross-origin requests.
 
-### Tasks to be carried out this week:
+### Tasks performed during the week:
 
-| Day | Task | Start Date | Completion Date |
-| --- | --- | --- | --- |
-| 1 | Installed and configured `jsonwebtoken` and `bcryptjs` libraries to encrypt passwords and handle secure sessions. | 06/07/2026 | 06/07/2026 |
-| 2 | Codeveloped user auth endpoints (Registration & Login), storing hashed credentials in MongoDB Atlas. | 07/07/2026 | 07/07/2026 |
-| 3 | Developed a token-validation middleware (`authMiddleware`) to protect private application endpoints. | 08/07/2026 | 08/07/2026 |
-| 4 | Implemented access-control middlewares (`roleMiddleware`) to validate user scopes (Student vs. Tutor vs. Admin). | 09/07/2026 | 09/07/2026 |
-| 5 | Co-developed course CRUD routes (allowing draft/published switching) and lesson association controllers with Dung. | 10/07/2026 | 10/07/2026 |
+| Day | Tasks performed | Start Date | End Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| **Monday** | - Design MongoDB Atlas database schemas (Course, Student, Video, Lecture modules, etc.). | 06/22/2026 | 06/22/2026 | https://mongoosejs.com/docs/guide.html |
+| **Tuesday** | - Support Dung in writing registration and login APIs, setting up JWT Authentication middleware. | 06/23/2026 | 06/24/2026 | https://jwt.io/introduction |
+| **Wednesday** | - Configure MongoDB Atlas IP Access Lists to allow connections only from the backend EC2 server. | 06/24/2026 | 06/24/2026 | https://docs.atlas.mongodb.com/security/ |
+| **Thursday** | - Develop a backend API to generate S3 Presigned URLs for direct avatar and thumbnail uploads. | 06/25/2026 | 06/25/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html |
+| **Friday** | - Configure CORS allowlist policies on Express backend to allow secure requests from the React frontend. | 06/26/2026 | 06/26/2026 | https://expressjs.com/en/resources/middleware/cors.html |
 
-### Week Achievements:
+### Key achievements of week 4:
 
-* Successfully established a secure JWT authentication and Role-Based Access Control (RBAC) foundation.
-* Completed core CRUD API sets for courses, lessons, and quiz schema operations.aries for clean list layouts and media streaming.
+* Completed 11 Mongoose Schemas covers all business logics of the platform.
+* Successfully developed secure upload capability using S3 Presigned URLs.
+* Completely resolved cross-origin (CORS) communication errors between Frontend and Backend.

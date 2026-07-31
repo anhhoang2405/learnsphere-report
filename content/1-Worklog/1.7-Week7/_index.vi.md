@@ -1,30 +1,31 @@
 ---
-title: "Week 7 Worklog"
-date: 2026-07-25
+title: "Worklog Tuần 7"
+date: 2026-07-13
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
-# 7. Cân bằng tải ALB, CloudFront & Tự động hóa CI/CD
+# 7. Cấu hình Cân bằng tải ALB, CloudFront HTTPS & Domain
 
 ### Mục tiêu trong tuần:
 
-* Cấu hình CloudFront CDN cho Frontend và định tuyến Application Load Balancer (ALB) cho EC2 Backend dưới giao thức bảo mật HTTPS.
-* Thiết lập tự động hóa quy trình CI/CD qua GitHub Actions (OIDC) và chạy nghiệm thu sản phẩm thực tế.
+* Đăng ký chứng chỉ SSL/TLS trên ACM và cấu hình HTTPS bảo mật.
+* Thiết lập ALB làm cổng trung chuyển traffic an toàn cho Backend.
+* Phân phối Frontend qua CloudFront CDN và trỏ tên miền chính thức.
 
-### Các đầu việc đã thực hiện trong tuần:
+### Công việc thực hiện trong tuần:
 
-| Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
-| --- | --- | --- | --- |
-| 1 | Nhận bản build Frontend tĩnh từ Sơn, tải lên S3 và cấu hình CloudFront CDN kết hợp OAC để bảo mật truy cập S3. | 27/07/2026 | 27/07/2026 |
-| 2 | Đăng ký SSL trên ACM cho tên miền `learnspherev2.id.vn`, dựng ALB nghe cổng 443 và chuyển tiếp traffic tới cổng 5000 của EC2. | 28/07/2026 | 28/07/2026 |
-| 3 | Cấu hình bản ghi CNAME trên Tenten: trỏ `www` về CloudFront CDN, và `api` về ALB để giải quyết triệt để lỗi Mixed Content. | 29/07/2026 | 29/07/2026 |
-| 4 | Viết và hoàn thiện file GitHub Actions workflow (`deploy.yml`), thiết lập OIDC xác thực an toàn không dùng access key tĩnh. | 30/07/2026 | 30/07/2026 |
-| 5 | Chạy kiểm thử tự động hóa CI/CD (push code -> tự động deploy); cùng Sơn và Dũng nghiệm thu hệ thống thực tế và nộp báo cáo. | 31/07/2026 | 31/07/2026 |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| **Thứ 2** | - Đăng ký chứng chỉ SSL/TLS miễn phí trên AWS Certificate Manager (ACM) cho tên miền `learnspherev2.id.vn`. | 13/07/2026 | 13/07/2026 | https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html |
+| **Thứ 3** | - Khởi tạo Application Load Balancer (ALB) nằm ở phân vùng Public Subnet, trỏ listener HTTPS về EC2 Backend. | 14/07/2026 | 14/07/2026 | https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html |
+| **Thứ 4** | - Nhận bản build tĩnh Frontend từ Sơn, đẩy lên S3 và tạo CloudFront Distribution phân phối qua HTTPS. | 15/07/2026 | 16/07/2026 | https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html |
+| **Thứ 5** | - Cấu hình DNS trên trang quản trị Tenten trỏ bản ghi `www` về CloudFront và `api` về ALB. | 16/07/2026 | 17/07/2026 | https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html |
+| **Thứ 6** | - Xử lý triệt để lỗi Mixed Content khi giao tiếp HTTPS bằng cách đổi tất cả link API sang domain phụ `api.learnspherev2.id.vn`. | 17/07/2026 | 17/07/2026 | https://aws.amazon.com/security/ |
 
-### Các kết quả đạt được:
+### Kết quả đạt được tuần 7:
 
-* Hệ thống LearnSphere được triển khai chạy thực tế bảo mật HTTPS hoàn toàn dưới tên miền `https://www.learnspherev2.id.vn`.
-* Hoàn thiện pipeline CI/CD tự động hóa quy trình deploy Backend lên EC2 và Frontend lên S3 trong vòng chưa đầy 3 phút.
-* Hoàn thành kỳ thực tập và bàn giao báo cáo nghiệm thu đúng thời hạn chót 31/07.
+* Mã hóa HTTPS thành công cho toàn bộ hệ thống web LearnSphere.
+* Hệ thống định tuyến traffic an toàn từ ALB đến Backend chạy trong Private Subnet.
+* Kết nối tên miền chính thức thành công, trang web hiển thị đúng giao diện và gọi API mượt mà.

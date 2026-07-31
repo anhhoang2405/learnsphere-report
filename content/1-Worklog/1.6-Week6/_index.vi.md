@@ -1,29 +1,30 @@
 ---
-title: "Week 6 Worklog"
-date: 2026-07-25
+title: "Worklog Tuần 6"
+date: 2026-07-06
 weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-# 6. Đóng gói Docker, ECR & Cài đặt máy chủ EC2
+# 6. Đóng gói Container Backend & Triển khai EC2
 
 ### Mục tiêu trong tuần:
 
-* Đóng gói mã nguồn Backend bằng Dockerfile phân tầng (Multi-stage) để tối ưu hóa kích thước và bảo mật.
-* Tạo AWS ECR, khởi dựng máy chủ EC2, cấu hình bộ nhớ ảo Swap và thiết lập phân quyền IAM Instance Profile.
+* Tối ưu hóa Dockerfile phân tầng để đảm bảo an toàn thông tin và giảm dung lượng.
+* Cài đặt và thiết lập môi trường vận hành Backend trên máy chủ EC2.
+* Viết kịch bản bash shell tự động hóa quy trình cập nhật container.
 
-### Các đầu việc đã thực hiện trong tuần:
+### Công việc thực hiện trong tuần:
 
-| Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
-| --- | --- | --- | --- |
-| 1 | Viết Dockerfile tối ưu hóa phân tầng sử dụng base image `node:24-alpine`, cấu hình chạy container dưới quyền user non-root. | 20/07/2026 | 20/07/2026 |
-| 2 | Khởi tạo Amazon ECR repository để lưu trữ các bản build Docker image của backend. | 21/07/2026 | 21/07/2026 |
-| 3 | Launch máy chủ EC2 (`t3.small`) trên AWS, cài đặt Docker và cấu hình 2GB Swap đề phòng tràn RAM khi chạy container. | 22/07/2026 | 22/07/2026 |
-| 4 | Cấu hình Security Group cho EC2: khóa chặt cổng SSH 22, chỉ cho phép nhận các kết nối web an toàn. | 23/07/2026 | 23/07/2026 |
-| 5 | Tạo và gán IAM Role cho EC2 (`learnsphere-ec2-role`) giúp máy chủ tự cấp quyền pull image ECR và đẩy log về CloudWatch. | 24/07/2026 | 24/07/2026 |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| **Thứ 2** | - Viết Dockerfile tối ưu phân tầng (Multi-stage build) sử dụng alpine image nhẹ, chạy dưới user non-root. | 06/07/2026 | 06/07/2026 | https://docs.docker.com/develop/develop-images/multistage-build/ |
+| **Thứ 3** | - Khởi tạo máy chủ EC2 (`t3.small`) trong phân vùng Private Subnet của VPC để cô lập máy chủ backend. | 07/07/2026 | 07/07/2026 | https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html |
+| **Thứ 5** | - Cài đặt Docker trên EC2 và cấu hình thêm 2GB bộ nhớ ảo Swap để tránh tràn RAM. | 09/07/2026 | 09/07/2026 | https://docs.docker.com/engine/install/ |
+| **Thứ 6** | - Kéo image Backend từ ECR về máy chủ EC2 và viết script bash tự động hóa quy trình pull image mới và khởi động lại container. | 10/07/2026 | 10/07/2026 | https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-pull-ecr.html |
 
-### Các kết quả đạt được:
+### Kết quả đạt được tuần 6:
 
-* Đóng gói Backend thành công với Docker image dung lượng nhỏ và chạy dưới quyền non-root bảo mật.
-* Hoàn thiện môi trường hạ tầng máy chủ EC2, sẵn sàng chạy container và liên kết với CloudWatch Logs.
+* Dockerfile hoàn thiện giúp giảm dung lượng image Backend từ 900MB xuống còn 150MB.
+* Khởi dựng máy EC2 và cấu hình Swap thành công, đảm bảo hệ thống chạy ổn định.
+* Backend chạy trơn tru trong container Docker trên máy chủ EC2 và kết nối thành công tới MongoDB Atlas.

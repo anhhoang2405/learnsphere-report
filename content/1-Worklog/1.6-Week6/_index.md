@@ -1,29 +1,30 @@
 ---
 title: "Week 6 Worklog"
-date: 2026-07-25
+date: 2026-07-06
 weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-# 6. Docker Containerization, ECR & EC2 Server Setup
+# 6. Backend Containerization & EC2 Deployment
 
-### Week Objectives:
+### Objectives of the week:
 
-* Containerize the Backend codebase using multi-stage Docker builds to optimize size and enhance security.
-* Create AWS ECR repositories, launch EC2 host servers, configure Swap space virtual memory, and associate IAM Instance Profile roles.
+* Optimize Dockerfile with multi-stage builds for security and smaller footprint.
+* Install and set up the production environment for Express backend on EC2.
+* Write bash scripts to automate container pull and restart processes.
 
-### Tasks to be carried out this week:
+### Tasks performed during the week:
 
-| Day | Task | Start Date | Completion Date |
-| --- | --- | --- | --- |
-| 1 | Wrote a multi-stage Dockerfile utilizing a `node:24-alpine` base image, configuring the container runtime to run under a secure non-root user. | 20/07/2026 | 20/07/2026 |
-| 2 | Initialized the Amazon ECR repository to store and version control backend Docker images. | 21/07/2026 | 21/07/2026 |
-| 3 | Launched an EC2 `t3.small` instance on AWS, installed Docker, and allocated 2GB of Swap virtual memory to prevent RAM exhaustion. | 22/07/2026 | 22/07/2026 |
-| 4 | Customized EC2 Security Group rules, closing public port 22 SSH ingress and restricting traffic exclusively to secure web pathways. | 23/07/2026 | 23/07/2026 |
-| 5 | Created and attached the IAM Instance Profile role (`learnsphere-ec2-role`) allowing EC2 to pull ECR images and push system logs to CloudWatch. | 24/07/2026 | 24/07/2026 |
+| Day | Tasks performed | Start Date | End Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| **Monday** | - Write a multi-stage Dockerfile using lightweight alpine base images running under non-root users. | 07/06/2026 | 07/06/2026 | https://docs.docker.com/develop/develop-images/multistage-build/ |
+| **Tuesday** | - Launch a production EC2 instance (`t3.small`) in the private subnet of the VPC. | 07/07/2026 | 07/07/2026 | https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html |
+| **Thursday** | - Install Docker on EC2 and configure 2GB of Swap space to prevent out-of-memory issues. | 07/09/2026 | 07/09/2026 | https://docs.docker.com/engine/install/ |
+| **Friday** | - Pull the backend image from ECR to EC2 and write a shell script to automate pulling new images and restarting. | 07/10/2026 | 07/10/2026 | https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-pull-ecr.html |
 
-### Week Achievements:
+### Key achievements of week 6:
 
-* Successfully dockerized the backend service, creating secure, lightweight production container profiles.
-* Successfully provisioned the EC2 target hosting host with Swap memory safety buffers and secured it with IAM instance profiles.
+* Optimized Dockerfile reducing image size from 900MB to 150MB.
+* Configured Swap space successfully on EC2 to ensure database and application stability under load.
+* Backend container successfully runs on EC2 and connects securely to MongoDB Atlas.

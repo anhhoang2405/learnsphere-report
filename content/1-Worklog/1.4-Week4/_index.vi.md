@@ -1,29 +1,31 @@
 ---
-title: "Week 4 Worklog"
-date: 2026-07-25
+title: "Worklog Tuần 4"
+date: 2026-06-22
 weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-# 4. Phát triển API Backend Core & Middleware JWT
+# 4. Thiết kế Database & Xây dựng API S3 Presigned URL
 
 ### Mục tiêu trong tuần:
 
-* Xây dựng hệ thống API quản lý khóa học, bài học và cơ sở dữ liệu bài thi trắc nghiệm (Quiz).
-* Thiết lập cơ chế xác thực bảo mật JWT và phân quyền vai trò người dùng (Tutor/Student/Admin).
+* Thiết kế cấu trúc dữ liệu MongoDB Atlas cho đồ án LearnSphere.
+* Phát triển các API backend hỗ trợ tải lên tệp tin media an toàn trực tiếp từ trình duyệt.
+* Cấu hình giao thức CORS bảo vệ ứng dụng.
 
-### Các đầu việc đã thực hiện trong tuần:
+### Công việc thực hiện trong tuần:
 
-| Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
-| --- | --- | --- | --- |
-| 1 | Cài đặt và cấu hình thư viện `jsonwebtoken` và `bcryptjs` để xử lý xác thực bảo mật tài khoản. | 06/07/2026 | 06/07/2026 |
-| 2 | Phối hợp viết API Đăng ký & Đăng nhập, kiểm tra và lưu dữ liệu người dùng mã hóa vào MongoDB. | 07/07/2026 | 07/07/2026 |
-| 3 | Xây dựng middleware xác thực token JWT (`authMiddleware`) bảo vệ các routes riêng tư của hệ thống. | 08/07/2026 | 08/07/2026 |
-| 4 | Lập trình các middleware phân quyền (`roleMiddleware`) để kiểm tra quyền hạn thao tác (Học viên/Giáo viên/Admin). | 09/07/2026 | 09/07/2026 |
-| 5 | Kết nối và hỗ trợ Dũng phát triển bộ API CRUD quản lý khóa học (chuyển đổi trạng thái Draft/Published) và bài học. | 10/07/2026 | 10/07/2026 |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| **Thứ 2** | - Thiết kế Schema cơ sở dữ liệu MongoDB Atlas (Khóa học, Học viên, Video, Bài học...). | 22/06/2026 | 22/06/2026 | https://mongoosejs.com/docs/guide.html |
+| **Thứ 3** | - Hỗ trợ Dũng viết API đăng ký, đăng nhập và cấu hình JWT Authentication middleware bảo mật. | 23/06/2026 | 24/06/2026 | https://jwt.io/introduction |
+| **Thứ 4** | - Cấu hình MongoDB Atlas IP Access List, cho phép địa chỉ IP của EC2 truy cập cơ sở dữ liệu. | 24/06/2026 | 24/06/2026 | https://docs.atlas.mongodb.com/security/ |
+| **Thứ 5** | - Viết API sinh S3 Presigned URL để Frontend tải ảnh đại diện, thumbnail trực tiếp lên S3 mà không qua Backend. | 25/06/2026 | 25/06/2026 | https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html |
+| **Thứ 6** | - Cấu hình CORS allowlist trên Express Backend để kết nối trơn tru với cổng React Frontend. | 26/06/2026 | 26/06/2026 | https://expressjs.com/en/resources/middleware/cors.html |
 
-### Các kết quả đạt được:
+### Kết quả đạt được tuần 4:
 
-* Hệ thống xác thực JWT và cơ chế phân quyền vai trò được hoàn tất bảo mật ở Backend.
-* Hoàn thành bộ API CRUD lõi quản lý thông tin các khóa học và cấu trúc bài học động.
+* Hoàn thiện 11 Mongoose Schemas đáp ứng đầy đủ các nghiệp vụ của LearnSphere.
+* Phát triển thành công tính năng upload file an toàn qua S3 Presigned URL.
+* Giải quyết hoàn toàn các lỗi chặn request CORS giữa Frontend và Backend.

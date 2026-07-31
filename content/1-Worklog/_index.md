@@ -1,23 +1,33 @@
 ---
 title: "Worklog"
-date: 2026-07-25
+date: 2026-06-01
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-# Internship Worklog Summary
+My **Workforce Bootcamp - First Cloud AI Journey** internship lasted 9 weeks, from **June 1, 2026** to **July 31, 2026**. During the first four weeks, I focused on building foundational knowledge and gaining hands-on experience with AWS services. During the following four weeks, I applied what I had learned to develop, improve, and deploy the **LearnSphere** project. The final week focused on reviewing the complete system, completing the bilingual workshop report, and preparing the project handover.
 
-This section records the weekly logs of **Nguyen Hoang Anh**'s internship under the **First Cloud AI Journey (FCAJ)** program.
+### Phase 1 - AWS learning and hands-on practice
 
-The official internship covers a duration from **15/06/2026 to 14/08/2026**, with the intensive project development phase of **LearnSphere** spanning 7 weeks (completed on **31/07/2026**). This log documents the learning of AWS services, codebase development, Docker containerization, secure EC2 deployments, S3/CloudFront hosting, and CI/CD automation.
+**Week 1:** [Internship orientation, Cloud Computing fundamentals, and AWS basics](1.1-week1/)
 
-#### Weekly Progression Summary
+**Week 2:** [IAM, cost management, networking, compute, and storage on AWS](1.2-week2/)
 
-1. **[Week 1: Introduction & AWS Foundations](1.1-week1/)** - Onboarded, studied basic cloud architecture, and configured local AWS CLI profiles.
-2. **[Week 2: Backend Architecture & Database Schema Design](1.2-week2/)** - Collaborated on MongoDB Atlas database design and initialized the Express.js backend server.
-3. **[Week 3: Amazon S3 Configuration & Presigned URL API](1.3-week3/)** - Created S3 Buckets, configured IAM policies, and implemented backend S3 Presigned URL APIs.
-4. **[Week 4: Core Backend APIs & JWT Auth Middleware](1.4-week4/)** - Developed Express APIs for course management and role-based (Student/Tutor) route guards.
-5. **[Week 5: AWS Bedrock, Groq Integration & Local E2E Testing](1.5-week5/)** - Integrated AWS Bedrock Converse & Groq APIs, resolved local CORS policies, and tested local workflows.
-6. **[Week 6: Docker Containerization & Server Deployment Setup](1.6-week6/)** - Wrote optimized multi-stage Dockerfile, set up ECR, launched EC2 instance with 2GB Swap and IAM instance role.
-7. **[Week 7: HTTPS ALB, CloudFront & CI/CD Deployment (Deadline 31/07)](1.7-week7/)** - Configured Application Load Balancer listeners (HTTPS 443), CloudFront static web distribution, custom SSL certificates, CNAME record routing on Tenten, and set up the automated deploy pipeline via GitHub Actions.
+**Week 3:** [AWS databases, content delivery, Docker, and Amazon ECR](1.3-week3/)
+
+**Week 4:** [AWS monitoring, alerting, generative AI, CI/CD, and architecture planning](1.4-week4/)
+
+### Phase 2 - LearnSphere project development and deployment
+
+**Week 5:** [LearnSphere system analysis and Backend feature development](1.5-week5/)
+
+**Week 6:** [AI integration, document processing, OCR, and reliable S3 uploads](1.6-week6/)
+
+**Week 7:** [Frontend development, user workflows, and application testing](1.7-week7/)
+
+**Week 8:** [AWS deployment, production validation, monitoring, and alerting](1.8-week8/)
+
+### Phase 3 - System review and report completion
+
+**Week 9:** [End-to-end system review and bilingual workshop report completion](1.9-week9/)
