@@ -1,6 +1,6 @@
 ---
 title: "Sự kiện 1"
-date: 2026-06-24
+date: 2026-06-20
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
@@ -10,7 +10,7 @@ pre: " <b> 4.1. </b> "
 
 ### 1. Thông tin chung về sự kiện
 *   **Tên sự kiện:** Cloud Architect Game show
-*   **Thời gian diễn ra:** 09:00 ngày 24/06/2026 (Công bố danh sách thi đấu ngày 19/06/2026)
+*   **Thời gian diễn ra:** 09:00 - 12:00 ngày 20/06/2026
 *   **Địa điểm:** Văn phòng AWS Việt Nam, Tòa nhà Bitexco, Quận 1, TP. Hồ Chí Minh
 *   **Vai trò tham gia:** Thành viên đội thi đấu (Đội gồm 5 thành viên)
 

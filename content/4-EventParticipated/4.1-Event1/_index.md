@@ -1,6 +1,6 @@
 ---
 title: "Event 1"
-date: 2026-06-24
+date: 2026-06-20
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
@@ -10,7 +10,7 @@ pre: " <b> 4.1. </b> "
 
 ### 1. General Event Information
 *   **Event Name:** Cloud Architect Game Show
-*   **Date & Time:** 09:00, June 24, 2026 (Team selection results announced on June 19, 2026)
+*   **Date & Time:** 09:00 - 12:00, June 20, 2026
 *   **Location:** AWS Vietnam Office, Bitexco Financial Tower, District 1, Ho Chi Minh City
 *   **Role:** Competitor (Member of a 5-person team)
 
