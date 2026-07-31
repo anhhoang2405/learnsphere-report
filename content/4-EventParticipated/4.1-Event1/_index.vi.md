@@ -12,7 +12,7 @@ pre: " <b> 4.1. </b> "
 *   **Tên sự kiện:** Cloud Architect Game show
 *   **Thời gian diễn ra:** 09:00 - 12:00 ngày 20/06/2026
 *   **Địa điểm:** Văn phòng AWS Việt Nam, Tòa nhà Bitexco, Quận 1, TP. Hồ Chí Minh
-*   **Vai trò tham gia:** Thành viên đội thi đấu (Đội gồm 5 thành viên)
+*   **Vai trò tham gia:** Khán giả cổ vũ
 
 ---
 

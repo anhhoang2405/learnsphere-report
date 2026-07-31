@@ -12,7 +12,7 @@ pre: " <b> 4.1. </b> "
 *   **Event Name:** Cloud Architect Game Show
 *   **Date & Time:** 09:00 - 12:00, June 20, 2026
 *   **Location:** AWS Vietnam Office, Bitexco Financial Tower, District 1, Ho Chi Minh City
-*   **Role:** Competitor (Member of a 5-person team)
+*   **Role:** Attendee / Audience Member
 
 ---
 
