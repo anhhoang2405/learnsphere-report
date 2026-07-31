@@ -50,6 +50,8 @@ Các câu hỏi trong cuộc thi xoay quanh các bài toán thiết kế thực 
 ---
 
 ### 6. Hình ảnh minh chứng tham gia sự kiện
-Dưới đây là hình ảnh ghi lại khoảnh khắc đội của em tham gia tranh tài trực tiếp tại văn phòng AWS:
+Dưới đây là hình ảnh ghi lại khoảnh khắc tham gia tranh tài trực tiếp tại văn phòng AWS:
 
-![Minh chứng tham gia Cloud Architect Gameshow](/images/4-EventParticipated/event1.jpg)
+![Minh chứng tham gia Cloud Architect Gameshow 1](/images/4-EventParticipated/event1.jpg)
+
+![Minh chứng tham gia Cloud Architect Gameshow 2](/images/4-EventParticipated/event1b.jpg)

@@ -50,6 +50,8 @@ The technical questions centered around real-world design challenges on AWS:
 ---
 
 ### 6. Event Verification Photos
-Below is the photo showing my team competing live at the AWS Vietnam office:
+Below are the photos showing the live participation at the AWS Vietnam office:
 
-![Cloud Architect Gameshow Proof](/images/4-EventParticipated/event1.jpg)
+![Cloud Architect Gameshow Proof 1](/images/4-EventParticipated/event1.jpg)
+
+![Cloud Architect Gameshow Proof 2](/images/4-EventParticipated/event1b.jpg)
