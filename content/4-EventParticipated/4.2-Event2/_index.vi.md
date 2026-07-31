@@ -12,7 +12,7 @@ pre: " <b> 4.2. </b> "
 *   **Tên sự kiện:** ASEAN Agentic AI Buildathon (AABW) - Demo Day & Project Showcase
 *   **Thời gian diễn ra:** 09:00 - 12:00 ngày 25/07/2026
 *   **Địa điểm:** Hội trường AWS Việt Nam, TP. Hồ Chí Minh
-*   **Vai trò tham gia:** Người tham dự học hỏi (Attendee/Audience)
+*   **Vai trò tham gia:** Người tham gia
 
 ---
 

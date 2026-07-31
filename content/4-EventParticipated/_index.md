@@ -15,7 +15,7 @@ During my internship, I participated in two events. Each one was a memorable exp
 
 &emsp;**Location:** AWS Vietnam Office, Bitexco Financial Tower, District 1, Ho Chi Minh City  
 
-&emsp;**Role:** Attendee / Audience Member  
+&emsp;**Role:** Attendee  
 
 ---
 
@@ -26,4 +26,4 @@ During my internship, I participated in two events. Each one was a memorable exp
 
 &emsp;**Location:** AWS Vietnam Office Hall, Ho Chi Minh City  
 
-&emsp;**Role:** Attendee / Audience Member  
+&emsp;**Role:** Attendee  

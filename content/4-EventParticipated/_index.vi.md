@@ -16,7 +16,7 @@ Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là
 
 &emsp;**Địa điểm:** Văn phòng AWS Việt Nam, Tòa nhà Bitexco, Quận 1, TP. Hồ Chí Minh
 
-&emsp;**Vai trò trong sự kiện:** Khán giả cổ vũ 
+&emsp;**Vai trò trong sự kiện:** Người tham gia
 
 ---
 
@@ -27,5 +27,5 @@ Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là
 
 &emsp;**Địa điểm:** Hội trường AWS Việt Nam, TP. Hồ Chí Minh
 
-&emsp;**Vai trò trong sự kiện:** Người tham dự học hỏi 
+&emsp;**Vai trò trong sự kiện:** Người tham gia
 
