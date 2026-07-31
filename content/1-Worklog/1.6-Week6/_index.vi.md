@@ -6,25 +6,24 @@ chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-# 6. Đóng gói mã nguồn & Phối hợp Thiết lập môi trường AWS
+# 6. Đóng gói Docker, ECR & Cài đặt máy chủ EC2
 
 ### Mục tiêu trong tuần:
 
-* Đóng gói mã nguồn tĩnh Frontend (Vite build) và hỗ trợ viết Dockerfile tối ưu phân tầng cho Backend.
-* Phối hợp thiết lập hạ tầng AWS (S3, ECR, EC2, IAM Role) an toàn bảo mật.
+* Đóng gói mã nguồn Backend bằng Dockerfile phân tầng (Multi-stage) để tối ưu hóa kích thước và bảo mật.
+* Tạo AWS ECR, khởi dựng máy chủ EC2, cấu hình bộ nhớ ảo Swap và thiết lập phân quyền IAM Instance Profile.
 
 ### Các đầu việc đã thực hiện trong tuần:
 
 | Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
 | --- | --- | --- | --- |
-| 1 | Thử nghiệm biên dịch tĩnh mã nguồn Frontend (React build) bằng trình biên dịch Vite. | 20/07/2026 | 20/07/2026 |
-| 2 | Viết file cấu hình `.dockerignore` và hỗ trợ Nguyễn Hồng Sơn kiểm thử giảm kích thước file build Docker. | 21/07/2026 | 21/07/2026 |
-| 3 | Khởi tạo AWS S3 Bucket `learnsphere-fe-static` phục vụ lưu trữ giao diện tĩnh Frontend. | 22/07/2026 | 22/07/2026 |
-| 4 | Phối hợp cấu hình Security Group cho EC2, mở cổng 80, 443 và giới hạn cổng 5000 cục bộ. | 23/07/2026 | 23/07/2026 |
-| 5 | Thiết kế các chính sách phân quyền (Policy) của IAM Role gán cho EC2 (`learnsphere-ec2-role`). | 24/07/2026 | 24/07/2026 |
+| 1 | Viết Dockerfile tối ưu hóa phân tầng sử dụng base image `node:24-alpine`, cấu hình chạy container dưới quyền user non-root. | 20/07/2026 | 20/07/2026 |
+| 2 | Khởi tạo Amazon ECR repository để lưu trữ các bản build Docker image của backend. | 21/07/2026 | 21/07/2026 |
+| 3 | Launch máy chủ EC2 (`t3.small`) trên AWS, cài đặt Docker và cấu hình 2GB Swap đề phòng tràn RAM khi chạy container. | 22/07/2026 | 22/07/2026 |
+| 4 | Cấu hình Security Group cho EC2: khóa chặt cổng SSH 22, chỉ cho phép nhận các kết nối web an toàn. | 23/07/2026 | 23/07/2026 |
+| 5 | Tạo và gán IAM Role cho EC2 (`learnsphere-ec2-role`) giúp máy chủ tự cấp quyền pull image ECR và đẩy log về CloudWatch. | 24/07/2026 | 24/07/2026 |
 
 ### Các kết quả đạt được:
 
-* Giao diện tĩnh Frontend được tối ưu hóa dung lượng (dưới 5MB) giúp tải trang nhanh chóng.
-* Thiết lập thành công S3 Frontend Bucket, cấu hình phân quyền Security Group cho EC2 bảo mật.
-* Hoàn thiện thiết kế IAM Instance Profile cho phép EC2 tương tác an toàn không dùng AWS access key tĩnh.
+* Đóng gói Backend thành công với Docker image dung lượng nhỏ và chạy dưới quyền non-root bảo mật.
+* Hoàn thiện môi trường hạ tầng máy chủ EC2, sẵn sàng chạy container và liên kết với CloudWatch Logs.

@@ -10,21 +10,21 @@ pre: " <b> 1.5. </b> "
 
 ### Mục tiêu trong tuần:
 
-* Tích hợp giao diện Trợ lý AI (AI Tutor) và trình làm bài kiểm tra trắc nghiệm (Quiz System) ở Frontend.
-* Chạy kiểm thử liên kết toàn diện (End-to-End) cục bộ giữa Frontend và Backend.
+* Yêu cầu quyền truy cập mô hình trên AWS Bedrock và tích hợp Bedrock Converse API, Groq API vào Backend.
+* Thực hiện kiểm thử liên kết toàn diện (End-to-End) local và gỡ các lỗi kết nối CORS.
 
 ### Các đầu việc đã thực hiện trong tuần:
 
 | Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
 | --- | --- | --- | --- |
-| 1 | Tìm hiểu luồng truyền nhận dữ liệu của API AI Chatbot và API tự sinh câu hỏi Quiz. | 13/07/2026 | 13/07/2026 |
-| 2 | Lập trình giao diện khung chat Trợ lý AI (AI Tutor) dạng trượt (sidebar) ở Frontend. | 14/07/2026 | 14/07/2026 |
-| 3 | Lập trình giao diện làm bài Quiz tương tác của học sinh (nhận dữ liệu JSON sinh ra từ AI). | 15/07/2026 | 15/07/2026 |
-| 4 | Phối hợp với Nguyễn Hồng Sơn xử lý lỗi CORS kết nối và cấu hình tự động đính kèm Token JWT vào Header. | 16/07/2026 | 16/07/2026 |
-| 5 | Chạy thử nghiệm chuỗi luồng nghiệp vụ: Đăng nhập -> Tạo khóa học -> Upload tệp -> Tự động sinh Quiz -> Làm bài -> Chat AI giải đáp lỗi. | 17/07/2026 | 17/07/2026 |
+| 1 | Truy cập AWS Console gửi yêu cầu kích hoạt Model Access cho mô hình Anthropic Claude trên AWS Bedrock. | 13/07/2026 | 13/07/2026 |
+| 2 | Viết service `ai-provider.service.js` ở Backend làm cổng tích hợp chung cho cả AWS Bedrock SDK và Groq API. | 14/07/2026 | 14/07/2026 |
+| 3 | Lập trình các API route phục vụ Trợ lý AI (`/api/ai/chat`) và sinh bộ câu hỏi trắc nghiệm tự động từ AI. | 15/07/2026 | 15/07/2026 |
+| 4 | Hỗ trợ Sơn kết nối React Frontend với các API AI, cấu hình chi tiết middleware CORS trên Express để tránh lỗi preflight. | 16/07/2026 | 16/07/2026 |
+| 5 | Chạy thử nghiệm chuỗi luồng nghiệp vụ E2E cục bộ: Đăng nhập -> Tạo khóa học -> Upload tệp S3 -> Sinh Quiz -> Hỏi đáp AI giải đáp bài học. | 17/07/2026 | 17/07/2026 |
 
 ### Các kết quả đạt được:
 
-* Hoàn thành giao diện tương tác AI đắc lực cho học viên (Khung chat AI và Trình làm bài tập Quiz).
-* Giải quyết triệt để lỗi kết nối CORS và mã hóa an toàn token đăng nhập client.
-* Toàn bộ hệ thống LearnSphere vận hành mượt mà, sẵn sàng chuyển giao lên môi trường đám mây AWS.
+* Tích hợp thành công lõi xử lý AI (AWS Bedrock Claude & Groq), các API sinh câu hỏi và chat phản hồi nhanh dưới 2s.
+* Giải quyết triệt để lỗi kết nối CORS preflight khi client React gửi kèm Auth Token trong Header lên Backend.
+* Hệ thống LearnSphere vận hành mượt mà trên local, sẵn sàng cho việc đóng gói và đưa lên AWS cloud.

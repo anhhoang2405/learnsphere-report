@@ -6,24 +6,24 @@ chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-# 4. Phát triển Giao diện Dashboard Học viên & Giáo viên
+# 4. Phát triển API Backend Core & Middleware JWT
 
 ### Mục tiêu trong tuần:
 
-* Xây dựng chi tiết giao diện Dashboard dành cho Học viên (Student Portal) và Giảng viên (Instructor Course Builder).
-* Đồng bộ hóa dữ liệu hiển thị khóa học và bài học với API Backend.
+* Xây dựng hệ thống API quản lý khóa học, bài học và cơ sở dữ liệu bài thi trắc nghiệm (Quiz).
+* Thiết lập cơ chế xác thực bảo mật JWT và phân quyền vai trò người dùng (Tutor/Student/Admin).
 
 ### Các đầu việc đã thực hiện trong tuần:
 
 | Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
 | --- | --- | --- | --- |
-| 1 | Lập trình giao diện Dashboard Học viên hiển thị danh sách khóa học đã đăng ký. | 06/07/2026 | 06/07/2026 |
-| 2 | Xây dựng trình phát video bài học (Video Player) liên kết nguồn dữ liệu bảo mật từ S3. | 07/07/2026 | 07/07/2026 |
-| 3 | Lập trình giao diện quản lý khóa học của Giáo viên (cho phép chuyển đổi trạng thái Draft/Published). | 08/07/2026 | 08/07/2026 |
-| 4 | Xây dựng các form thêm bài học, biên soạn câu hỏi kiểm tra (Quiz Creator). | 09/07/2026 | 09/07/2026 |
-| 5 | Kết nối Axios fetch client để ánh xạ dữ liệu động từ database lên giao diện Frontend. | 10/07/2026 | 10/07/2026 |
+| 1 | Cài đặt và cấu hình thư viện `jsonwebtoken` và `bcryptjs` để xử lý xác thực bảo mật tài khoản. | 06/07/2026 | 06/07/2026 |
+| 2 | Phối hợp viết API Đăng ký & Đăng nhập, kiểm tra và lưu dữ liệu người dùng mã hóa vào MongoDB. | 07/07/2026 | 07/07/2026 |
+| 3 | Xây dựng middleware xác thực token JWT (`authMiddleware`) bảo vệ các routes riêng tư của hệ thống. | 08/07/2026 | 08/07/2026 |
+| 4 | Lập trình các middleware phân quyền (`roleMiddleware`) để kiểm tra quyền hạn thao tác (Học viên/Giáo viên/Admin). | 09/07/2026 | 09/07/2026 |
+| 5 | Kết nối và hỗ trợ Dũng phát triển bộ API CRUD quản lý khóa học (chuyển đổi trạng thái Draft/Published) và bài học. | 10/07/2026 | 10/07/2026 |
 
 ### Các kết quả đạt được:
 
-* Hoàn thành toàn bộ giao diện core của nền tảng LearnSphere (Student Dashboard, Course Detail, Instructor Builder).
-* Tích hợp thành công thư viện UI React hỗ trợ hiển thị danh sách khóa học và video bài giảng mượt mà.
+* Hệ thống xác thực JWT và cơ chế phân quyền vai trò được hoàn tất bảo mật ở Backend.
+* Hoàn thành bộ API CRUD lõi quản lý thông tin các khóa học và cấu trúc bài học động.

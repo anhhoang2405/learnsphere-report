@@ -43,6 +43,6 @@ chapter: false
 ### References & Demo Links
 *   **GitHub Repository**: [LearnSphere Repo](https://github.com/HoiaeKHMT/LearnSphere)
 *   **Demo Video**: [▶️ Click here to watch the LearnSphere Project Demo Video](https://youtu.be/tDmx26ALz5s)
-*   **Production URL**: [https://www.learnsphere.id.vn](https://www.learnsphere.id.vn)
-*   **API Endpoint**: [https://api.learnsphere.id.vn/api/](https://api.learnsphere.id.vn/api/)
+*   **Production URL**: [https://www.learnspherev2.id.vn](https://www.learnspherev2.id.vn)
+*   **API Endpoint**: [https://api.learnspherev2.id.vn/api/](https://api.learnspherev2.id.vn/api/)
 

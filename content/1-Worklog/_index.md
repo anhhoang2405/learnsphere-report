@@ -15,9 +15,9 @@ The official internship covers a duration from **15/06/2026 to 14/08/2026**, wit
 #### Weekly Progression Summary
 
 1. **[Week 1: Introduction & AWS Foundations](1.1-week1/)** - Onboarded, studied basic cloud architecture, and configured local AWS CLI profiles.
-2. **[Week 2: Backend Architecture & Database Setup](1.2-week2/)** - Developed Express API routes and integrated MongoDB Atlas cloud database.
-3. **[Week 3: Amazon S3 Storage Integration](1.3-week3/)** - Integrated AWS SDK v3 S3 client and implemented secure file uploading via Presigned URLs.
-4. **[Week 4: Frontend UI/UX Implementation](1.4-week4/)** - Initialized Vite React project and built tutor dashboard and upload flow interfaces.
-5. **[Week 5: AI Core Service Integration & Local Testing](1.5-week5/)** - Wrote AI provider wrappers supporting Groq (Llama-3) and AWS Bedrock Converse APIs, resolved CORS blockers, and verified quiz generation locally.
-6. **[Week 6: Docker Containerization & Server Setup](1.6-week6/)** - Packaged backend using an optimized multi-stage Dockerfile, created ECR repository, launched Amazon Linux 2023 EC2, and configured IAM Instance Profile role.
+2. **[Week 2: Backend Architecture & Database Schema Design](1.2-week2/)** - Collaborated on MongoDB Atlas database design and initialized the Express.js backend server.
+3. **[Week 3: Amazon S3 Configuration & Presigned URL API](1.3-week3/)** - Created S3 Buckets, configured IAM policies, and implemented backend S3 Presigned URL APIs.
+4. **[Week 4: Core Backend APIs & JWT Auth Middleware](1.4-week4/)** - Developed Express APIs for course management and role-based (Student/Tutor) route guards.
+5. **[Week 5: AWS Bedrock, Groq Integration & Local E2E Testing](1.5-week5/)** - Integrated AWS Bedrock Converse & Groq APIs, resolved local CORS policies, and tested local workflows.
+6. **[Week 6: Docker Containerization & Server Deployment Setup](1.6-week6/)** - Wrote optimized multi-stage Dockerfile, set up ECR, launched EC2 instance with 2GB Swap and IAM instance role.
 7. **[Week 7: HTTPS ALB, CloudFront & CI/CD Deployment (Deadline 31/07)](1.7-week7/)** - Configured Application Load Balancer listeners (HTTPS 443), CloudFront static web distribution, custom SSL certificates, CNAME record routing on Tenten, and set up the automated deploy pipeline via GitHub Actions.

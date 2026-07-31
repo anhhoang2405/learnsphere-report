@@ -6,25 +6,25 @@ chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
-# 7. Triển khai Frontend S3/CloudFront & Nghiệm thu Hệ thống (Hạn chót 31/07)
+# 7. Cân bằng tải ALB, CloudFront & Tự động hóa CI/CD
 
 ### Mục tiêu trong tuần:
 
-* Triển khai hoàn tất giao diện React Frontend lên S3 Website Hosting và bảo mật HTTPS qua CloudFront CDN.
-* Ánh xạ tên miền riêng và phối hợp kiểm thử tự động hóa quy trình CI/CD từ GitHub Actions.
+* Cấu hình CloudFront CDN cho Frontend và định tuyến Application Load Balancer (ALB) cho EC2 Backend dưới giao thức bảo mật HTTPS.
+* Thiết lập tự động hóa quy trình CI/CD qua GitHub Actions (OIDC) và chạy nghiệm thu sản phẩm thực tế.
 
 ### Các đầu việc đã thực hiện trong tuần:
 
 | Thứ | Công việc thực hiện | Ngày bắt đầu | Ngày hoàn thành |
 | --- | --- | --- | --- |
-| 1 | Thực hiện build bản chính thức Frontend và đồng bộ hóa các tệp tin lên S3 Frontend Bucket. | 27/07/2026 | 27/07/2026 |
-| 2 | Thiết lập CloudFront CDN, cấu hình Custom Error Pages (định tuyến lỗi 404 về `/index.html`) hỗ trợ React Router. | 28/07/2026 | 28/07/2026 |
-| 3 | Trỏ tên miền phụ CNAME `www` trên Tenten.vn về tên miền phân phối của CloudFront. | 29/07/2026 | 29/07/2026 |
-| 4 | Phối hợp với Nguyễn Hồng Sơn cấu hình GitHub Secrets và chạy thử nghiệm quy trình tự động deploy Frontend/Backend. | 30/07/2026 | 30/07/2026 |
-| 5 | Kiểm thử bảo mật toàn diện trên cổng HTTPS thực tế, hoàn thiện tài liệu báo cáo thực tập. | 31/07/2026 | 31/07/2026 |
+| 1 | Nhận bản build Frontend tĩnh từ Sơn, tải lên S3 và cấu hình CloudFront CDN kết hợp OAC để bảo mật truy cập S3. | 27/07/2026 | 27/07/2026 |
+| 2 | Đăng ký SSL trên ACM cho tên miền `learnspherev2.id.vn`, dựng ALB nghe cổng 443 và chuyển tiếp traffic tới cổng 5000 của EC2. | 28/07/2026 | 28/07/2026 |
+| 3 | Cấu hình bản ghi CNAME trên Tenten: trỏ `www` về CloudFront CDN, và `api` về ALB để giải quyết triệt để lỗi Mixed Content. | 29/07/2026 | 29/07/2026 |
+| 4 | Viết và hoàn thiện file GitHub Actions workflow (`deploy.yml`), thiết lập OIDC xác thực an toàn không dùng access key tĩnh. | 30/07/2026 | 30/07/2026 |
+| 5 | Chạy kiểm thử tự động hóa CI/CD (push code -> tự động deploy); cùng Sơn và Dũng nghiệm thu hệ thống thực tế và nộp báo cáo. | 31/07/2026 | 31/07/2026 |
 
 ### Các kết quả đạt được:
 
-* Giao diện tĩnh Frontend được triển khai thành công tại tên miền riêng bảo mật: **`https://www.learnsphere.id.vn`**.
-* Quy trình CI/CD tích hợp mượt mà (tự động đồng bộ file tĩnh lên S3 và xóa cache CloudFront `/*` khi có code mới).
-* Nghiệm thu toàn diện hệ thống LearnSphere và nộp báo cáo đúng hạn chót 31/07.
+* Hệ thống LearnSphere được triển khai chạy thực tế bảo mật HTTPS hoàn toàn dưới tên miền `https://www.learnspherev2.id.vn`.
+* Hoàn thiện pipeline CI/CD tự động hóa quy trình deploy Backend lên EC2 và Frontend lên S3 trong vòng chưa đầy 3 phút.
+* Hoàn thành kỳ thực tập và bàn giao báo cáo nghiệm thu đúng thời hạn chót 31/07.

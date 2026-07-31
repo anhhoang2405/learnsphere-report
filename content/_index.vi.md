@@ -42,5 +42,5 @@ chapter: false
 ### Tài liệu Tham khảo & Demo Links
 *   **GitHub Repository**: [LearnSphere Repo](https://github.com/HoiaeKHMT/LearnSphere)
 *   **Video Demo**: [▶️ Nhấp vào đây để xem Video Demo giới thiệu đồ án LearnSphere](https://youtu.be/tDmx26ALz5s)
-*   **Tên miền trang Web**: [https://www.learnsphere.id.vn](https://www.learnsphere.id.vn)
-*   **Cổng API Backend**: [https://api.learnsphere.id.vn/api/](https://api.learnsphere.id.vn/api/)
+*   **Tên miền trang Web**: [https://www.learnspherev2.id.vn](https://www.learnspherev2.id.vn)
+*   **Cổng API Backend**: [https://api.learnspherev2.id.vn/api/](https://api.learnspherev2.id.vn/api/)

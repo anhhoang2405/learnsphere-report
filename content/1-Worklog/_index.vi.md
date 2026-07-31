@@ -15,9 +15,9 @@ Kỳ thực tập chính thức kéo dài từ ngày **15/06/2026 đến ngày 1
 #### Tóm tắt tiến trình 7 tuần thực tập
 
 1. **[Tuần 1: Giới thiệu & Cơ bản về AWS](1.1-week1/)** - Nhập học bootcamp, làm quen AWS CLI và khởi tạo tài khoản.
-2. **[Tuần 2: Kiến trúc Backend & Thiết lập Database](1.2-week2/)** - Phát triển các routes API Express và liên kết MongoDB Atlas.
-3. **[Tuần 3: Tích hợp lưu trữ S3](1.3-week3/)** - Lập trình upload file qua cơ chế chữ ký bảo mật S3 Presigned URL.
-4. **[Tuần 4: Phát triển giao diện Frontend](1.4-week4/)** - Khởi tạo dự án Vite React, lập trình trang học sinh và giáo viên.
-5. **[Tuần 5: Tích hợp dịch vụ AI cốt lõi & Test liên kết](1.5-week5/)** - Tích hợp APIs của Groq và AWS Bedrock Converse, gỡ lỗi CORS kết nối và test hệ thống local.
-6. **[Tuần 6: Đóng gói Docker & Cài đặt máy chủ EC2](1.6-week6/)** - Đóng gói dự án Backend bằng Dockerfile phân tầng, tạo ECR, cài đặt Docker trên EC2 và gán IAM Role bảo mật.
+2. **[Tuần 2: Kiến trúc Backend & Thiết kế Database Schemas](1.2-week2/)** - Phối hợp thiết kế cơ sở dữ liệu MongoDB Atlas và dựng khung server Express.js.
+3. **[Tuần 3: Cấu hình Amazon S3 & API Presigned URL](1.3-week3/)** - Tạo S3 Bucket, phân quyền IAM, và viết API sinh S3 Presigned URL để upload/stream file.
+4. **[Tuần 4: Phát triển API Backend Core & Middleware JWT](1.4-week4/)** - Xây dựng các API CRUD khóa học, bài học và middleware kiểm tra quyền hạn (Tutor/Student).
+5. **[Tuần 5: Tích hợp AWS Bedrock, Groq & Test liên kết](1.5-week5/)** - Tích hợp APIs của Groq và AWS Bedrock Converse, gỡ lỗi CORS kết nối và test hệ thống local.
+6. **[Tuần 6: Đóng gói Docker & Cài đặt máy chủ EC2](1.6-week6/)** - Viết Dockerfile tối ưu phân tầng, tạo ECR, launch EC2, cấu hình Swap 2GB và IAM Role bảo mật.
 7. **[Tuần 7: Cân bằng tải ALB, CloudFront & Tự động hóa CI/CD (Hạn chót 31/07)](1.7-week7/)** - Đăng ký chứng chỉ ACM SSL, cấu hình ALB nghe cổng 443, CloudFront CDN cho Frontend, trỏ tên miền phụ Tenten, viết pipeline deploy.yml tự động và nghiệm thu hoàn thành dự án.
