@@ -1,211 +1,159 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-07-30
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# LearnSphere - Smart AI-Powered E-Learning Platform
-## Intelligent Online Learning Platform Integrated with AI
+# LearnSphere - Online Learning Platform Integrated with AI
+## An AWS Solution for Next-Gen E-Learning & AI Integration
 
 ### 1. Executive Summary
-LearnSphere is a next-generation online learning platform (E-Learning) designed to enhance teaching and learning efficiency in modern educational environments. The platform combines a full-stack web application (React/Vite & Express/MongoDB) with AWS cloud infrastructure (EC2, CloudFront, S3, ECR, AWS Systems Manager, CloudWatch, SNS), CI/CD automation via GitHub Actions, and high-speed Artificial Intelligence powered by the Groq API (LLM Inference Engine). The system supports flexible role-based access control for 3 user groups (Student, Instructor, Admin), integrating key features such as a 24/7 AI Learning Assistant, automated document extraction (PDF/Word/OCR scanned images) to generate smart quizzes, secure multimedia asset storage via S3 Media Bucket, and real-time system metrics monitoring via AWS CloudWatch combined with automated email alerts to Admin via Amazon SNS.
+
+**LearnSphere** is a next-generation AI-integrated online learning platform designed for students, tutors, and administrators. The system centralizes course management, lessons, media assets (video, PDF/DOCX documents), quizzes, student progress tracking, and interactive discussions within a modern Single Page Application (SPA). The AI Assistant empowers students to ask context-aware questions based on lesson materials, automatically summarizes documents, and assists tutors in generating quizzes by difficulty level.
+
+The solution utilizes a High Availability (HA) architecture deployed in the AWS Singapore Region (`ap-southeast-1`). The React/Vite/TypeScript frontend is compiled into static assets, stored in a private Amazon S3 Bucket Frontend, and globally distributed via Amazon CloudFront. The official domain `https://www.learnspherev2.id.vn` is managed via TenTen DNS, CNAME-routed to CloudFront, and secured with SSL/TLS HTTPS certificates issued by AWS Certificate Manager (ACM).
+
+The Node.js/Express backend is containerized into immutable Docker images stored in Amazon ECR, running within an Auto Scaling Group maintaining a minimum of 2 EC2 instances across 2 Availability Zones (`ap-southeast-1a` and `ap-southeast-1b`) in Private Subnets, fronted by an Internet-facing Application Load Balancer. Course media assets reside in a separate private Amazon S3 Media Bucket, securely accessed via Presigned URLs. Business data is managed in MongoDB Atlas, while Groq API powers high-speed Generative AI inference. The CI/CD pipeline is fully automated via GitHub Actions utilizing GitHub OIDC and AWS Systems Manager Parameter Store with Instance Refresh (Zero-downtime deployment & Auto Rollback).
 
 ---
 
 ### 2. Problem Statement
 
-#### Current Issues
-Traditional E-Learning systems lack personalization and instant support capabilities for students outside of class hours. Instructors spend excessive manual time reading materials, summarizing, and drafting quiz questions for students. Furthermore, lecture documents in PDF format, Word files (.docx), or scanned image documents (OCR) are not automated for lesson data conversion. Operationally, application deployment lacks automation (no CI/CD), and storing large video files directly on servers causes system overload and complicates log management.
+Traditional E-Learning platforms face major operational and technical bottlenecks:
 
-#### Solution
-LearnSphere implements an optimized AWS production infrastructure architecture (`ap-southeast-1`): Frontend (React/Vite) is statically built, stored on Amazon S3 (`S3 Frontend`), and distributed via Amazon CloudFront CDN. Backend (Express.js) is containerized with Docker, managed on Amazon ECR, and automatically deployed to an Amazon EC2 Instance inside a VPC Public Subnet (via Internet Gateway) using GitHub Actions CI/CD combined with AWS Systems Manager (SSM) and IAM. The database utilizes MongoDB Atlas, while multimedia files and lesson documents are stored on Amazon S3 (`S3 Media`). Smart features integrated with the Groq API LLM Inference combined with text processing libraries (`pdf-parse`, `mammoth`, `tesseract.js` OCR) automate lesson summarization, power the 24/7 AI Tutor, and generate diverse Quiz question banks. The system is closely monitored via AWS CloudWatch (Logs & Alarms), automatically triggering Amazon SNS (`LearnSphere-Alerts`) to dispatch immediate notifications to Admin Gmail upon incident detection.
+- **Fragmented Learning Experience**: Disjointed workflows across separate video streaming sites, document shares, quiz tools, and generic AI chatbots unaligned with course content.
+- **Manual Overhead**: Tutors spend significant hours reviewing documents, preparing summaries, drafting quizzes, and manually tracking student progress.
+- **Inefficient Document & Media Ingestion**: Lack of automated text extraction/OCR for PDF, DOCX, and scanned documents. Streaming large video binaries directly through the backend server causes network bottlenecks and service crashes.
+- **Single Point of Failure (SPOF)**: Single EC2 backend instances risk total outage during hardware failures or unexpected traffic spikes.
+- **Deployment & Security Risks**: Manual deployments, long-lived access keys, or credential leaks increase downtime risks and breach vulnerability.
 
-#### Benefits & Return on Investment (ROI)
-- **Time Optimization:** Automates up to 80% of quiz/assignment creation time for instructors.
-- **24/7 Learning Support:** Provides a personalized AI learning assistant 24/7 for students.
-- **Operating Cost Optimization:** Docker containerization combined with CloudFront and EC2 `t2.micro`/`t3.micro` optimizes operating budgets, with estimated infrastructure costs around $8.30 – $14.80 USD/month (~$99.60 – $177.60 USD for 12 months).
-- **Accelerated Deployment:** CI/CD pipeline reduces product deployment time by 90%.
-- **Fast Payback:** Clear payback and effectiveness achieved within 1–3 months by saving hundreds of manual labor hours and improving educational quality.
+LearnSphere resolves these challenges through a unified multi-role platform, secure media storage, document-bounded AI, and a 100% automated Multi-AZ High Availability cloud architecture on AWS.
 
 ---
 
-### 3. Solution Architecture
-The platform adopts an AWS Cloud Production-ready architecture in region `ap-southeast-1` combined with Docker containerization and CI/CD automation via GitHub Actions. The React frontend interface is distributed via Amazon CloudFront CDN backed by S3 Frontend. The Express.js backend operates on an Amazon EC2 Instance inside a VPC Public Subnet via Internet Gateway, interacting directly with MongoDB Atlas, S3 Media Bucket, Groq API (LLM Inference), and CloudWatch / SNS monitoring systems.
+### 3. Objectives & Scope
 
-![LearnSphere AWS Architecture](/images/LEARNSHPHERE.drawio.png)
+#### 3.1. System Objectives
 
-{{< mermaid >}}
-graph TD
-    subgraph Users_Dev ["Users & Deployment"]
-        User["👤 USER (Student / Instructor)"]
-        GitHub["🐙 GitHub (CI/CD Pipeline)"]
-    end
+- Deploy a responsive SPA accessible securely at **`https://www.learnspherev2.id.vn`** with HTTPS enforcement.
+- Support 3 distinct user roles (`student`, `tutor`, `admin`) with fine-grained access control.
+- Upgrade backend architecture to Multi-AZ High Availability (HA) behind an Application Load Balancer and Auto Scaling Group (minimum 2 instances in Private Subnets).
+- Secure storage resources with Private S3 Buckets (Frontend & Media), Origin Access Control (OAC), and Presigned Multipart Uploads.
+- Integrate AI (Groq API, OpenAI API) for context-aware Q&A, document summarization, Vietnamese PDF OCR, and automated quiz generation.
+- Build a 100% automated CI/CD pipeline using GitHub Actions with GitHub OIDC, zero-downtime Instance Refresh deployments, and automated rollback upon health check failure.
+- Monitor infrastructure health and application logs via Amazon CloudWatch, triggering instant email alerts via Amazon SNS.
 
-    subgraph AWS_Cloud ["AWS Cloud Infrastructure (ap-southeast-1)"]
-        IAM["🔐 IAM (Identity & Access Control)"]
-        ECR["📦 Amazon ECR (Container Registry)"]
-        SSM["⚙️ AWS Systems Manager"]
+#### 3.2. Functional Scope
 
-        subgraph Edge_Storage ["Edge & Storage Services"]
-            CloudFront["⚡ Amazon CloudFront (CDN)"]
-            S3_FE["🪣 S3 Frontend Bucket"]
-            S3_Media["🪣 S3 Media Bucket"]
-        end
-
-        subgraph VPC ["AWS VPC (Availability Zone)"]
-            subgraph PublicSubnet ["Public Subnet"]
-                IGW["🌐 Internet Gateway"]
-                EC2["🖥️ Amazon EC2 Instance (Docker Backend)"]
-            end
-        end
-
-        subgraph Monitoring_Alerts ["Monitoring & Alerts"]
-            CloudWatch["📊 AWS CloudWatch (Logs + Alarms)"]
-            SNS["🔔 Amazon SNS (LearnSphere-Alerts)"]
-        end
-    end
-
-    subgraph External ["External Services"]
-        MongoDB["🍃 MongoDB Atlas (Cloud DB)"]
-        Groq["🚀 Groq API (LLM Inference Engine)"]
-        Gmail["✉️ Gmail ADMIN"]
-    end
-
-    %% User Flow
-    User -->|Web Browsing| CloudFront
-    CloudFront -->|Fetch Static Assets| S3_FE
-    CloudFront -->|Send API Request| IGW
-    IGW --> EC2
-    User <-->|Upload / Download Media| S3_Media
-
-    %% GitHub CI/CD Flow
-    GitHub -->|Auth & IAM Permissions| IAM
-    GitHub -->|Push Docker Image| ECR
-    GitHub -->|Control & Deploy EC2| SSM
-    GitHub -->|Invalidate Cache| CloudFront
-    GitHub -->|Deploy Static Assets| S3_FE
-
-    %% EC2 Core Services
-    EC2 <-->|Manage Media Files| S3_Media
-    EC2 <-->|Database Query| MongoDB
-    EC2 <-->|AI Tutor & Quiz Gen| Groq
-    EC2 -->|Push System Logs| CloudWatch
-
-    %% System Monitoring & Notification Loop
-    CloudWatch -->|Trigger Alarm| SNS
-    SNS -->|Send Alert Email| Gmail
-{{< /mermaid >}}
-
-#### AWS Services & Technologies Used
-- **Amazon EC2 Instance:** Hosts Backend Express.js application (running inside Docker Container) in Public Subnet of VPC (Region `ap-southeast-1`) connected via Internet Gateway.
-- **Amazon CloudFront & S3 Frontend Bucket:** Distributes and stores static Frontend application (React + Vite + Tailwind CSS), accelerating response speed globally.
-- **S3 Media Bucket:** Securely stores lecture videos, images, and learning materials (PDF/Word), serving direct user downloads/uploads and EC2 media management.
-- **Amazon ECR (Elastic Container Registry) & AWS Systems Manager (SSM):** Official Docker Image repository and remote automated deployment agent for safe execution on EC2 Instance.
-- **AWS IAM (Identity and Access Management):** Manages access control and secure authentication for GitHub Actions CI/CD workflows to AWS resources.
-- **AWS CloudWatch (Logs & Alarms) & Amazon SNS (`LearnSphere-Alerts`):** Collects system logs, monitors EC2 metrics, and automatically triggers email notifications to **Gmail ADMIN**.
-- **GitHub Actions:** Automates end-to-end CI/CD workflow (Build & push Docker image to ECR, deploy S3 Frontend, invalidate CloudFront cache, and command EC2 via Systems Manager).
-- **Groq API Engine:** Powers high-speed AI features (Chatbot AI Tutor, lesson analysis, automated Quiz generation).
-- **MongoDB Atlas:** Managed Cloud MongoDB Database storing users, courses, lessons, and quiz attempt history.
-
-#### Component Design
-- **User Management & Authorization:** JWT Authentication with 3 roles (Student, Instructor, Admin) and password recovery OTP.
-- **Course & Lesson Management:** Course creation (Draft/Published), video/document upload to S3 Media, lesson ordering.
-- **Document Processing & AI Engine:** Text extraction from PDF/Word/OCR scanned images (Vietnamese Tesseract OCR), sent to Groq API for auto-summarization and quiz generation.
-- **Quiz Execution & Automated Grading:** Interactive Quiz system (Multiple choice, True/False, Fill-in-the-blank, Essay) with auto-grading and history tracking.
-- **CI/CD Pipeline, SSM & SNS Monitoring:** GitHub Actions automatically tests, pushes to ECR, and deploys via Systems Manager to EC2; CloudWatch & SNS monitor system 24/7 and send immediate alerts to Gmail Admin.
-
-#### Database ERD Schema Design
-To store operational information for our smart learning platform, the system uses MongoDB Atlas database with a detailed Entity-Relationship Diagram (ERD):
-
-![Database ERD Schema](/images/database_erd.png)
-
-
+| Role | Key Features |
+| --- | --- |
+| **Student** | Course enrollment, lesson/video viewing, document reading, progress tracking, quizzes, AI Assistant interaction, course discussion. |
+| **Tutor** | Course/lesson/media creation and management; student approvals; AI-powered document summary & quiz generation; detailed student quiz reports. |
+| **Admin** | User account management and role assignment; course auditing; system metrics, S3 storage monitoring, CloudWatch log auditing. |
+| **Platform** | JWT Authentication (HttpOnly Secure Cookie), S3 Presigned/Multipart Upload, Orphan cleanup, AI Rate limit, GitHub OIDC CI/CD, Multi-AZ ASG & ALB Health Checks. |
 
 ---
 
-### 4. Technical Implementation
+### 4. System Architecture
 
-#### Implementation Phases
-The project consists of 2 parts — building AWS Infrastructure / CI/CD Pipeline and developing the AI-integrated Full-stack Web application — executed across 4 phases within 2 internship months:
+![LearnSphere Production High Availability Architecture Diagram](/images/LEARNSHPHERE.png)
 
-1. **Research & Architecture Design:** System requirements analysis, Database Schema Design (11 Models), API Design, and AWS VPC architecture diagram (Month 1 / Weeks 1–2).
-2. **AWS Infrastructure & CI/CD Setup:** Initialize S3 Buckets, Amazon ECR, EC2 Instance, CloudFront, and write GitHub Actions workflow to automatically build Docker image (Month 1 / Weeks 2–3).
-3. **Core Services Development & OpenAI Integration:** Build Backend API (Auth, Course, Lesson, S3 Presigned URL), connect OpenAI API, OCR/PDF parsing module, and build React/Vite UI (Month 1 / Week 4 - Month 2 / Week 6).
-4. **Testing, CloudWatch Monitoring & Deployment:** Configure CloudWatch Logs & Alarms, End-to-End system testing on EC2, performance optimization, and documentation packaging (Month 2 / Weeks 7–8).
+**Figure 1. LearnSphere Production High Availability Architecture and Service Flow.**
 
-#### Technical Requirements
-- **Backend & Infrastructure:** Node.js 18+, Express 5, Mongoose 9, Docker, `@aws-sdk/client-s3`, `@aws-sdk/client-cloudwatch-logs`, OpenAI SDK, `tesseract.js` (`vie`), `mammoth`, `pdf-parse`. `.env` configuration for S3 Buckets (`ap-southeast-1`), ECR URI, and OpenAI API Key.
-- **Frontend & CI/CD:** React 18, TypeScript, Vite, Tailwind CSS, KaTeX. GitHub Actions workflow configured with AWS Secrets (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`).
+> **Future Architecture Evolution (AWS Native Roadmap):**  
+> In future iterations, our team plans to migrate **MongoDB Atlas to Amazon DynamoDB** (utilizing the `Dynamoose` ODM library connected internally via VPC Gateway Endpoints) and migrate **Groq API to Amazon Bedrock** (direct Claude 3.5 access with built-in Bedrock Guardrails & Knowledge Bases for RAG). Additionally, integrating **AWS WAF** at the edge and employing VPC Interface Endpoints will optimize security and infrastructure costs.
 
----
+#### 4.1. User Request Flow
 
-### 5. Roadmap & Key Milestones
+1. User browser resolves `https://www.learnspherev2.id.vn` via TenTen DNS pointing to Amazon CloudFront CDN.
+2. HTTPS connections are encrypted using SSL/TLS certificates issued by AWS Certificate Manager (ACM).
+3. CloudFront fetches static Frontend assets from Amazon S3 Bucket Frontend via Origin Access Control (OAC).
+4. API requests matching `/api/*` bypass cache and forward directly to the Internet-facing Application Load Balancer via HTTPS port 443 (or `origin.learnspherev2.id.vn`).
+5. ALB balances traffic evenly across EC2 Backend Instances running inside 2 Private Subnets across 2 Availability Zones (`ap-southeast-1a` and `ap-southeast-1b`).
+6. EC2 Backend handles business logic, JWT authentication, MongoDB Atlas queries, and Groq/OpenAI API requests via 2 independent NAT Gateways per AZ.
+7. For course media (video, PDF, thumbnails), the backend generates short-lived Presigned URLs allowing browsers to upload/download directly with Amazon S3 Media Bucket.
 
-```text
-[Month 0 / Pre-Internship] ──► [Month 1 / Weeks 1-4] ──► [Month 2 / Weeks 5-8] ──► [Post-Deployment]
-  Planning & Design             AWS Infra & Core API     OpenAI, CI/CD & Test      1-Year Operation
-```
+#### 4.2. CI/CD & Deployment Automation Flow
 
-- **Pre-Internship (Month 0):** 1 month planning, requirements documentation, and preliminary AWS architecture design.
-- **Internship (Months 1–2):**
-  - **Month 1:**
-    - *Weeks 1–2:* Complete Database Schema design, API Design, and EC2/S3/CloudFront VPC diagram.
-    - *Weeks 3–4:* Initialize AWS infrastructure (ECR, EC2, CloudFront), configure GitHub Actions CI/CD, and write basic Backend APIs.
-  - **Month 2:**
-    - *Weeks 5–6:* Integrate OpenAI API, PDF/Docx/OCR document extraction, AI Assistant, and Auto Quiz Generation on React Frontend.
-    - *Weeks 7–8:* Configure AWS CloudWatch Logs & Alarms, End-to-End system testing on EC2, performance optimization, and finalize report.
-- **Post-Deployment:** Maintain system on AWS, collect user feedback, and expand features over 1 year.
+1. Developer pushes code to the `main` branch on GitHub.
+2. GitHub Actions authenticates with AWS via GitHub OIDC (no static keys), assuming temporary IAM role credentials.
+3. Workflow executes Unit Tests, builds Docker Images tagged by Git SHA, and pushes to Amazon ECR.
+4. Updates new image tag in AWS Systems Manager (SSM) Parameter Store.
+5. Triggers Auto Scaling Instance Refresh: ASG launches fresh EC2 instances using the updated Launch Template, performing `/health/ready` checks via Target Group. Once healthy, old instances terminate (launch-before-terminate). Automatically rolls back if health checks fail.
+6. Builds React Frontend, syncs static build to Amazon S3 Bucket Frontend, and invalidates CloudFront Cache.
 
 ---
 
-### 6. Budget Estimation
+### 5. Technical Component Design
 
-Estimated cloud computing service costs available on AWS Pricing Calculator.
-
-#### Infrastructure Costs
-
-| Cloud / AI Service | Specification Details | Cost / Month (USD) |
+| Component | Service / Technology | Technical Role |
 | --- | --- | --- |
-| **Amazon EC2 (t2.micro / t3.micro)** | Free Tier or ~0.0116 USD/hour | 4.50 - 8.50 USD |
-| **Amazon CloudFront & S3 Static (`learnsphere-fe-static`)** | Frontend hosting and CDN data transfer | 0.50 USD |
-| **Amazon S3 Standard (`ai-learning-platform-vhd`)** | 10 GB media/document storage | 0.30 USD |
-| **Amazon ECR & CloudWatch** | Docker image storage and log collection | 0.50 USD |
-| **OpenAI API** | ~300,000 input/output tokens for AI Tutor & Quiz Gen | 2.50 - 5.00 USD |
-| **MongoDB Atlas (Shared Cluster)** | Free Tier M0 | 0.00 USD |
-| **Total Monthly Cost** | | **8.30 – 14.80 USD/month** |
-| **Total Annual Cost (12 Months)** | | **99.60 – 177.60 USD/year** |
-
-#### Hardware / Software Costs
-- **Hardware & Software Cost:** $0 USD (Utilizing existing hardware and open-source tools).
-
----
-
-### 7. Risk Assessment
-
-#### Risk Matrix
-
-| Identified Risk | Impact Level | Likelihood |
-| --- | --- | --- |
-| EC2 Instance Downtime | High | Low |
-| OpenAI API Token Budget Overrun | High | Low |
-| OCR extraction errors on blurry scan documents | Medium | Medium |
-| GitHub Actions CI/CD Pipeline Failure | Medium | Low |
-
-#### Mitigation Strategies
-- **EC2 Management:** Configure Docker auto-restart policy (`restart: always`), create CloudWatch Alarm when CPU/RAM exceeds 85%.
-- **OpenAI Budget:** Configure Max Tokens limit, apply Rate Limiting on API requests, and cache common AI responses.
-- **OCR Documents:** Preprocess text, display warning to users if uploaded file is too blurry.
-- **CI/CD & Security:** Test Docker build locally before pushing, enforce AWS IAM least privilege, and store keys in GitHub Secrets.
-
-#### Contingency Plans
-- Automatically recover container or restart EC2 via CloudWatch Actions if instance crashes.
-- Provide `QuestionBuilder` tool for instructors to manually craft/edit questions when uploaded files cannot be extracted by AI.
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS | Client-side SPA, role-based UI, direct S3 upload, quizzes, AI Assistant. |
+| **Backend** | Node.js, Express 5, Docker | REST API, JWT auth, business logic, presigned URLs, AI orchestration, `/health/ready` checks. |
+| **Compute / HA** | Amazon EC2 (`t3.small`), ASG, ALB | Multi-AZ Docker container execution in Private Subnets, auto-scaling (2-4 instances), load balancing. |
+| **Container Registry** | Amazon ECR | Immutable Docker Image storage tagged by Git SHA. |
+| **Database** | MongoDB Atlas, Mongoose ODM | Stores User, Course, Lesson, Enrollment, Quiz, Attempt, Progress, Notification, AI Message. |
+| **Storage** | 2 Private Amazon S3 Buckets | Amazon S3 Frontend (static assets) & Amazon S3 Media (videos, PDFs, DOCX, avatars). |
+| **CDN & DNS** | Amazon CloudFront, TenTen DNS, ACM | Global CDN caching, domain management `www.learnspherev2.id.vn`, SSL HTTPS certificate management. |
+| **Networking** | AWS VPC, 2 Public & 2 Private Subnets, 2 NAT Gateways | Secure Multi-AZ network segmentation, isolating EC2 Backend from direct internet access. |
+| **Configuration** | AWS SSM Parameter Store | Centralized management of encrypted `.env` parameters and production Docker image tags. |
+| **CI/CD** | GitHub Actions, AWS OIDC, Instance Refresh | Automated test, build, ECR push, zero-downtime deployment, auto-rollback. |
+| **Monitoring** | Amazon CloudWatch, Amazon SNS | Log collection, CPU/ALB Health alarms, email alert notifications. |
 
 ---
 
-### 8. Expected Outcomes
+### 6. Technical Implementation & Security
 
-- **Technical Improvements:** Successfully built a Docker/AWS Cloud standard E-Learning system, automatically deployed via GitHub Actions CI/CD, automated learning material workflows using OpenAI API, and monitored via CloudWatch.
-- **Long-term Value:** AWS EC2 + Docker infrastructure ready to scale (Auto Scaling Group / ECS / EKS) for thousands of students, serving as a foundation for future EdTech research and products.
+- **Network Segmentation**: EC2 Backend instances reside exclusively inside Private Subnets with no public IPs. Inbound access is strictly routed through ALB in Public Subnets.
+- **OIDC Authentication & IAM Least Privilege**: Short-lived GitHub OIDC credentials for CI/CD. EC2 instances assume IAM Role restricted to SSM read, CloudWatch log write, and S3 media access.
+- **Data & Storage Security**: S3 Buckets enable *Block Public Access* with CloudFront OAC. Media is accessible only via short-lived Presigned URLs (15-60 minutes).
+- **Centralized Secrets Management**: Secrets are never hardcoded; production environment variables are stored encrypted in SSM Parameter Store and fetched at container runtime.
+- **Outbound Control & Whitelisting**: Each AZ utilizes an independent NAT Gateway. MongoDB Atlas enforces IP Whitelisting, allowing access exclusively from the Elastic IPs of AWS NAT Gateways.
+
+---
+
+### 7. Implementation Roadmap & Milestones
+
+| Phase | Timeline | Activities | Deliverables |
+| --- | --- | --- | --- |
+| **1. AWS & VPC Foundation** | Weeks 1–4 | Multi-AZ VPC, Public/Private Subnets, NAT Gateways, ECR, S3 Buckets, ACM Certificate, OIDC setup. | Cloud infrastructure ready. |
+| **2. Backend & Containerization** | Week 5 | Node.js Docker containerization, `/health/ready` check, MongoDB Atlas & S3 Presigned URL integration. | Business API containerized. |
+| **3. AI & Document Processing** | Week 6 | Groq API integration, PDF/DOCX text extraction, Tesseract.js OCR, AI Tutor & Quiz Generator. | Context-bounded AI functional. |
+| **4. Frontend & User Experience** | Week 7 | React/Vite UI implementation, course/progress/quiz management, CloudFront CDN & S3 OAC integration. | Responsive SPA complete. |
+| **5. Production HA Deployment** | Week 8 | ALB setup, Launch Template, Multi-AZ ASG, SSM Parameter Store, GitHub Actions CI/CD with Instance Refresh. | System live on `www.learnspherev2.id.vn`. |
+| **6. Verification & Final Report** | Week 9 | End-to-end testing, load testing, auto-rollback verification, documentation & Workshop completion. | Final deliverables accepted. |
+
+---
+
+### 8. Operational Cost Analysis
+
+To optimize expenses and ensure budget efficiency for the LearnSphere project during the workshop phase, the system operates under a controlled Multi-AZ scenario in the AWS Singapore Region (`ap-southeast-1`). The estimated total monthly expenditure is summarized below:
+
+- **Primary Infrastructure Subtotal (Compute, Network, Storage, ALB)**: $53.42 / month (including 2 EC2 `t3.small`, 2 NAT Gateways, 1 ALB, S3 Standard, ECR, and CloudWatch Logs running 240h/month).
+- **Contingency Buffer (5%)**: $2.67 / month (covering unexpected data transfer, requests, and additional logging).
+- **TOTAL ESTIMATED WORKSHOP COST**: $56.09 / month (maintaining a target range of $50–$60 / month).
+
+This financial model balances High Availability Multi-AZ infrastructure with effective cost control. The budget is primarily allocated to NAT Gateways and the Application Load Balancer to enforce network security in Private Subnets. Detailed resource breakdowns and advanced cost optimization strategies are analyzed in depth in Section 5.11. Cost Analysis.
+
+---
+
+### 9. Risk Assessment & Optimization
+
+| Risk Factor | Impact | Likelihood | Mitigation Strategy & Architecture Design |
+| --- | --- | --- | --- |
+| **EC2 Instance Hardware Failure** | Low | Medium | Auto Scaling Group automatically replaces unhealthy instances based on ALB/EC2 Health Checks. |
+| **Deployment Code Failure Outage** | Medium | Low | Instance Refresh (Launch-before-terminate) mechanism guarantees zero downtime & auto-rollback. |
+| **High NAT Gateway Cost** | Medium | High | Free S3 Gateway Endpoint handles S3 traffic; future roadmap utilizes VPC Endpoints for internal AWS services. |
+| **Memory Bottleneck during PDF OCR** | Medium | Medium | Limit file upload sizes, process OCR sequentially on dedicated workers, enforce timeout & memory caps. |
+| **Credential / Secret Leakage** | High | Low | GitHub OIDC for CI/CD, encrypted SSM Parameter Store for secrets, zero static access keys on servers. |
+
+---
+
+### 10. Expected Outcomes & Operational Value
+
+- **Secure Access & Performance**: Fully operational application on **`https://www.learnspherev2.id.vn`**, 100% HTTPS encryption, instant frontend loads via CloudFront Edge Caching.
+- **High Availability Infrastructure**: Backend isolated in Private Subnets, automatically load balanced via ALB, auto-scaled across 2 AZs via ASG.
+- **100% Automated CI/CD**: Source code deployment from GitHub to AWS runs seamlessly with OIDC security, zero downtime, and instant automated rollback upon error detection.
+- **Context-Bounded AI Integration**: AI Assistant provides accurate answers based on lesson materials, automating document summaries and quiz generation, saving 70% of preparation time for tutors.
