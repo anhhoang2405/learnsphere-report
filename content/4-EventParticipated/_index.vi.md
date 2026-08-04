@@ -7,7 +7,7 @@ pre: " <b> 4. </b> "
 ---
 
 
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+Trong quá trình thực tập, em đã tham gia 3 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là những món quà và những khoảnh khắc rất tuyệt vời.
 
 ### [Sự kiện 1](4.1-Event1/)
 &emsp;**Tên sự kiện:** Cloud Architect Game show
@@ -29,3 +29,13 @@ Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là
 
 &emsp;**Vai trò trong sự kiện:** Người tham gia
 
+---
+
+### [Sự kiện 3](4.3-Event3/)
+&emsp;**Tên sự kiện:** Workshop: Introduction to Amazon Bedrock AgentCore
+
+&emsp;**Thời gian:** 09:00 - 12:00 ngày 01/08/2026
+
+&emsp;**Địa điểm:** Hội trường AWS Việt Nam, TP. Hồ Chí Minh
+
+&emsp;**Vai trò trong sự kiện:** Người tham gia

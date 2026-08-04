@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
+During my internship, I participated in three events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
 
 ### [Event 1](4.1-Event1/)  
 &emsp;**Event Name:** Cloud Architect Game Show  
@@ -27,3 +27,14 @@ During my internship, I participated in two events. Each one was a memorable exp
 &emsp;**Location:** AWS Vietnam Office Hall, Ho Chi Minh City  
 
 &emsp;**Role:** Attendee  
+
+---
+
+### [Event 3](4.3-Event3/)  
+&emsp;**Event Name:** Workshop: Introduction to Amazon Bedrock AgentCore  
+
+&emsp;**Date & Time:** 09:00 - 12:00, August 1, 2026  
+
+&emsp;**Location:** AWS Vietnam Office Hall, Ho Chi Minh City  
+
+&emsp;**Role:** Attendee
